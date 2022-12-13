@@ -37,7 +37,7 @@ html_theme_options = {
     "logo_only": True
 }
 
-html_css_files = 'css/style.css'
+html_css_files = ['css/style.css']
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
