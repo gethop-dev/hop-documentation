@@ -5,15 +5,16 @@ Introduction
 ------------
 
 In this tutorial you will bootstrap a basic HOP platform with the following features:
+
 * `Duct Framework`_ based backend.
 * `Reactive`_ ClojureScript frontend.
 * Infrastructure provisioning in the Amazon Web Services cloud provider.
 * CI/CD integration with `Github Actions`_.
 
-.. -Reactive: https://github.com/reagent-project/reagent
-.. -Duct Framework: https://github.com/duct-framework/duct
-.. -Amazon Web Services: https://aws.amazon.com/
-.. -Github Actions: https://docs.github.com/en/actions
+.. _Reactive: https://github.com/reagent-project/reagent
+.. _Duct Framework: https://github.com/duct-framework/duct
+.. _Amazon Web Services: https://aws.amazon.com/
+.. _Github Actions: https://docs.github.com/en/actions
 
 .. note::
 
@@ -88,7 +89,8 @@ tool is also used in later steps of running the project locally,
 
 The tool will require to provide a AWS Access Key and its corresponding Secret Key. If you don't have any you can `create them`_ from the AWS Console.
 
-.. -create them: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?icmpid=docs_iam_console
+.. _AWS Cloudformation: https://aws.amazon.com/cloudformation/
+.. _create them: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?icmpid=docs_iam_console
 
 Once you have the credentials you can store them using the following command:
 
@@ -96,20 +98,21 @@ Once you have the credentials you can store them using the following command:
 
    $: aws-vault add hop/admin
 
-The tool will ask you for the Key id and Secret and the setup will be done.
+The tool will ask you for the AWS Key Id and Secret and the setup will be done.
 
 Obtain the default settings file
 ---------------------
 
 The HOP Bootstraping tool allows the user to configure certain
 characteristics of the project to be generated and provisioned in
-AWS. That configuration is specified using the ``settings.edn``
-file. At the moment the file has to be edited manually, but a user
+AWS. At the moment that configuration is specified using a
+``settings.edn`` file that has to be edited manually, but a user
 interface will be provided in next versions of the tool.
 
-The settings file is not intended to be written from scratch, but the
-user has to edit the default file provided by the tool. To obtain that
-file you can run the following command:
+The settings file is not
+intended to be written from scratch, but the user has to edit the
+default file provided by the tool. To obtain that file you can run the
+following command:
 
 .. code-block:: console
 
@@ -122,7 +125,7 @@ The command will create a `edn` file in the current directory.
    The ``settings.edn`` file might look a bit intimidating, but it's
    due to the fact that it's intented for being consumed by a user
    interface that will come in a future early version of HOP. The file
-   provides multiple preconfigured choices that the user is able to
+   contains multiple preconfigured choices that the user is able to
    chose that make the file bigger.
 
 Edit the settings file
@@ -133,6 +136,7 @@ characteristics of the platform. For this tutorial we will only edit a
 few of them.
 
 The file has a tree like structure in which each node has the following fields:
+
 * ``name``: The name of the node.
 * ``tag``: Optional string explaining the node's purpose.
 * ``type``: The type that the ``value`` field is of. The node can be a
@@ -207,9 +211,11 @@ hop-tutorial project. That role contains the specific permissions for
 interacting with the resources in the dev environment for the
 hop-tutorial project. You will have to edit the ``~/.aws/config```file and add the rows printed by the tool:
 
-| [profile hop/hop-tutorial-dev-env]
-| source_profile=hop/hop-local-dev
-| role_arn=arn:aws:iam::XXXXXXXXXX:role/hop-tutorial-eb
+.. code-block:: python
+
+   [profile hop/hop-tutorial-dev-env]
+   source_profile=hop/hop-local-dev
+   role_arn=arn:aws:iam::XXXXXXXXXX:role/hop-tutorial-eb
 
 The tool will also print the AWS Access Key and Access Secret for the
 CI/CD user. Take note of them, as you will need it in a next step to
