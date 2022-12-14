@@ -27,7 +27,7 @@ Install Babashka
 ++++++++++++++++
 
 There are multiple installation options available depending on your
-Operation System and package manager of choice. You can find them
+Operating System and package manager of choice. You can find them
 described in the `official documentation
 <https://github.com/babashka/babashka#installation>`_.
 
