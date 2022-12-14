@@ -34,7 +34,8 @@ html_theme = 'sphinx_rtd_theme'
 html_logo = 'img/logo.svg'
 
 html_theme_options = {
-    "logo_only": True
+    'logo_only': True,
+    'display_version': False
 }
 
 html_static_path = ['_static']
