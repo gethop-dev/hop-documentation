@@ -9,8 +9,11 @@ Contents
 --------
 
 .. toctree::
+   :caption: Get started
 
-   get-started
-   how-to-guides
-   reference
-   background-information
+   /get-started/installation/main
+
+.. toctree::
+   :caption: Reference
+
+   /reference/hop-cli/main
