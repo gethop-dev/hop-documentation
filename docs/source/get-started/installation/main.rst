@@ -70,7 +70,7 @@ For MacOs:
 
 .. code-block:: console
 
-   $: TODO
+   $: brew install openssl
 
 We don't provide installation steps for other Operating Systems, but
 as it's a very common tool it should be straightfordward to find the
