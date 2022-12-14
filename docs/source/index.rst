@@ -13,6 +13,7 @@ Contents
    :caption: Get started
 
    /get-started/installation/main
+   /get-started/aws-run-project/main
 
 .. toctree::
    :maxdepth: 2
