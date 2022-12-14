@@ -16,12 +16,12 @@ Prerequisites
 For running the HOP Command Line Tool two programs are required:
 
 * `Babashka <https://github.com/babashka/babashka>`_ is a fast
-   starting native Clojure interpreter, and it's leveraged by HOP for
-   running the Command Line Tool.
+  starting native Clojure interpreter, and it's leveraged by HOP for
+  running the Command Line Tool.
 * `OpenSSL <https://www.openssl.org/>`_ provides cryptographical
-  capabilities to the HOP Command Line Tool. It's used to safely store
-  credentials, and to run other crypto operations like creating
-  self-signed SSL certificates.
+  capabilities to the HOP Command Line Tool. In HOP it's used to
+  safely store credentials, and to run other crypto operations like
+  creating self-signed SSL certificates.
 
 Install Babashka
 ++++++++++++++++
@@ -92,7 +92,7 @@ the required Clojure dependencies and resources are packed in a single
 jar file that can be run from the command line using Babashka.
 
 The mentioned file can be downloaded from the `Github Releases
-section`_. Download the ``hop-cli.jar` file from the latest available
+section`_. Download the ``hop-cli.jar`` file from the latest available
 release, and place it in the directory in which you will run the tool.
 
 .. _Github Releases section: https://github.com/gethop-dev/hop-cli/releases
