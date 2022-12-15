@@ -31,8 +31,8 @@ Having the HOP Command Line Tool installed as explained in the
 bootstraping a new HOP project. But for running the generated project
 locally you will need some additional tools:
 
-* `Docker <https://docs.docker.com/engine/install/>`_
-* `Docker Compose <https://docs.docker.com/compose/install/>`_
+* `Docker <https://www.docker.com/>`_
+* `Docker Compose <https://docs.docker.com/compose/>`_
 * `AWS Vault <https://github.com/99designs/aws-vault>`_
 
 Apart from the software requirementes, you will also need an Amazon Web
@@ -41,6 +41,11 @@ infrastructure.
 
 Install Docker
 ++++++++++++++
+
+To install, please refer to the `Docker documentation`_ to install it
+in your OS of choice.
+
+.. _Docker documentation: https://docs.docker.com/engine/install/
 
 Once you have installed Docker, you can check that it's installed
 correctly by running:
@@ -52,6 +57,11 @@ correctly by running:
 Install Docker Compose
 ++++++++++++++++++++++
 
+To install, please refer to the `Docker Compose documentation`_ to
+install it in your OS of choice.
+
+.. _Docker Compose documentation: https://docs.docker.com/compose/install/
+
 Once you have installed Docker Compose, you can check that it's installed
 correctly by running:
 
@@ -60,10 +70,15 @@ correctly by running:
    $: docker-compose --version
    docker-compose version 1.27.4, build unknown
 
-For running HOP docker-compose version 1.27.0+ is required.
+For running HOP Docker Compose version 1.27.0+ is required.
 
 Install AWS Vault
 +++++++++++++++++
+
+To install, please refer to the `AWS Vault documentation`_ to install
+it in your OS of choice.
+
+.. _AWS Vault documentation: https://github.com/99designs/aws-vault#installing
 
 Once you have installed AWS Vault, you can check that it's installed
 correctly by running:
@@ -88,48 +103,48 @@ administrator credentials using AWS Vault. The tool provides secure
 storage for AWS credentials for the local development environment. The
 tool is also used in later steps for running the project locally,
 
-The tool will require to provide a AWS Access Key and its
-corresponding Secret Key. If you don't have any you can `create them`_
+The tool will ask you for a AWS Access Key and its corresponding
+Secret Key. If you don't have the credentials, you can `create them`_
 from the AWS Console.
 
 .. _AWS Cloudformation: https://aws.amazon.com/cloudformation/
 .. _create them: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html?icmpid=docs_iam_console
 
-Once you have the credentials you can store them using the following command:
+Once you have the credentials you can store them using the following
+command:
 
 .. code-block:: console
 
    $: aws-vault add hop/admin
 
-The tool will ask you for the AWS Key Id and Secret, and the setup will be done.
+The tool will ask you for the AWS Access Key ID and AWS Secret Access
+Key, and the setup will be done.
 
 Obtain the default settings file
----------------------
+--------------------------------
 
 The HOP Bootstraping tool allows the user to configure certain
 characteristics of the project to be generated and provisioned in
 AWS. At the moment that configuration is specified using a
-``settings.edn`` file that has to be edited manually, but a user
-interface will be provided in next versions of the tool.
+``settings.edn`` file that has to be edited manually.
 
-The settings file is not
-intended to be written from scratch, but the user has to edit the
-default file provided by the tool. To obtain that file you can run the
-following command:
+The settings file is not intended to be written from scratch, but the
+user has to edit the default file provided by the tool. To obtain that
+file you can run the following command:
 
 .. code-block:: console
 
-   $: bb hop-cli.jar bootstrap bb cli bootstrap copy-settings -dst settings.edn
+   $: bb hop-cli.jar bootstrap copy-settings --dst settings.edn
 
 The command will create an `edn` file in the current directory.
 
 .. note::
 
    The ``settings.edn`` file might look a bit intimidating, but it's
-   due to the fact that it's intented for being consumed by a user
-   interface that will come in a future early version of HOP. The file
-   contains multiple preconfigured choices that the user is able to
-   chose that make the file bigger.
+   due to the fact that it's intended for being consumed by an user
+   interface that will come in a future version of HOP. The file size
+   is an effect of containing lots of pre-configured choices, that
+   might not be needed for the user.
 
 Edit the settings file
 ----------------------
@@ -138,7 +153,8 @@ The settings file allows configuring multiple features and
 characteristics of the platform. For this tutorial we will only edit a
 few of them.
 
-The file has a tree like structure in which each node has the following fields:
+The file has a tree-like structure in which each node has the
+following fields:
 
 * ``name``: The name of the node.
 * ``tag``: Optional string explaining the node's purpose.
@@ -151,15 +167,14 @@ The file has a tree like structure in which each node has the following fields:
   the user can select. The selection is done using the ``value`` field
   by specifying the name(s) of the selected branch(es).
 
-Having that structure in mind, open the file with your favourite text
-editor and edit the following options
+Having that structure in mind, open the file with your favorite text
+editor and edit the following options:
 
 * ``project`` -> ``name`` -> ``value``: We will set the project name to ``"hop-tutorial"``.
 * ``project`` -> ``profiles`` -> ``value``: HOP offers multiple
-  profiles that enhance the bootstraped project, but for this tutorial
-  we will select some basic ones. We will set the value to
+  profiles that enhance the bootstrapped project. But for this
+  tutorial we will select some basic ones. We will set the value to
   ``[:core :frontend :aws :ci]``
-* TODO more?
 
 Run the bootstrap command
 -------------------------
@@ -175,8 +190,8 @@ Note that we are telling ``aws-vault`` to run the ``bb hop-cli.jar
 bootstrap`` command with the ``hop/admin`` credentials that we stored
 in the vault in a previous step.
 
-Bootstraping the project will take several minutes (mostly because of
-the AWS provisioning). The tool will keep us informed about each step
+Bootstrapping the project will take several minutes (mostly because of
+the AWS provisioning). The tool will keep you informed about each step
 that it performs:
 
 * AWS infrastructure provisioning.
@@ -191,7 +206,7 @@ that it performs:
   * Test environment resources: The tool will create the AWS
     resources for running the test environment.
 
-* Project file creation. The tool will create the local project files
+* Project files creation. The tool will create the local project files
   in the hop-tutorial folder.
 
 * Post-installation steps. If required the tool will print additional
@@ -199,7 +214,7 @@ that it performs:
   completed.
 
 Configure the local project credentials
------------------------
+---------------------------------------
 
 Certain operations of the bootstrap process can't be easily and
 securely automated. So the tool will print the missing steps that have
@@ -213,7 +228,7 @@ attention to the output to get the needed credentials/secrets
 generated by the bootstrap process.
 
 First you will have to add the credentials for the AWS user used for
-local development. Te user will be shared among all the HOP projects
+local development. The user will be shared among all the HOP projects
 you run on your system. So this step will only have to performed the
 first time you bootstrap a HOP project.
 
@@ -225,7 +240,7 @@ Then you will have to configure the role used for running the
 hop-tutorial project. That role contains the specific permissions for
 interacting with the resources in the dev environment for the
 hop-tutorial project. You will have to edit the ``~/.aws/config`` file
-and add the rows printed by the tool:
+and add the rows printed by the HOP Boostrapping tool:
 
 .. code-block:: python
 
@@ -233,15 +248,15 @@ and add the rows printed by the tool:
    source_profile=hop/hop-local-dev
    role_arn=arn:aws:iam::XXXXXXXXXX:role/hop-tutorial-eb
 
-The tool will also print the AWS Access Key and Access Secret for the
-CI/CD user. Take note of them, as you will need it in a next step to
-configure Github Actions.
+The tool will also print the AWS Access Key ID and AWS Secret Access
+Key for the CI/CD user. Take note of them, as you will need them in a
+next step to configure Github Actions.
 
 Initialize the Git repository
 -----------------------------
 
 Before you make any change to the code we suggest to initialize the
-git repository. That way you will easily track any change that you
+git repository. That way you will easily track any changes that you
 make to the code generated by the bootstrap.
 
 .. code-block:: console
@@ -254,19 +269,20 @@ And also make the initial commit:
    git commit -m "Initial commit"
 
 
-Run the project in the dev environment
-----------------------------------------
+Run the project in the development environment
+----------------------------------------------
 
 At this point you are ready to run the project in the development
 environment. For that, simply go to the hop-tutorial folder generated
 by the bootstrap process and run the `start-dev.sh` script. In short,
 the script will take care of three things:
 
-* Select the relevant `docker-compose` files used in the dev
-  environment and run ``docker-compose up -d``
-* Make sure that the envirionment is started in a fresh state and deletes and TODO
-* Run the project with the ``hop/hop-tutorial-dev-env`` credentials
-  needed for accessing the development environment resources.
+* Selecting the relevant `docker-compose` files used in the
+  development environment and starting the Docker containers.
+* Making sure that the environment is started in a fresh state.
+* Running the project with the ``hop/hop-tutorial-dev-env``
+  credentials needed for accessing the development environment
+  resources.
 
 .. code-block:: console
 
@@ -280,7 +296,7 @@ application and a `Nginx`_ reverse proxy.
 The application's container is already running, but that doesn't mean
 that the application is up and running. You need to start it manually
 from the REPL. In the application logs you should see that the REPL is
-running in the ``4001`` port.
+running in the port ``4001``.
 
 Using your favourite Clojure IDE connect to the REPL. Some IDE's call
 this type of REPL external or remote.
@@ -304,14 +320,15 @@ And then start the application itself:
 At this point the application's web server will be up and running, and
 you should be able to connect through a web browser. The ``(go)``
 command outputed that the server is running on port ``3000``. But you
-should connect through the Nginx reverse proxy that's running in port
-``80`` instead.
+should connect through the Nginx reverse proxy that's running in the
+port ``80`` instead.
 
 Open a web browser and go to ``http://localhost``. You should see
 HOP's welcome page there.
 
-We want make any change to the code now, so once you check the
-application is running you can stop it by:
+We won't make any change to the code now, so once you check that the
+application is running you can stop it by executing the following
+script:
 
 .. code-block:: console
 
@@ -321,15 +338,15 @@ Create and configure the external Github repository
 ---------------------------------------------------
 
 In this tutorial we will use Github for hosting the code, and Github
-Actions for the Continous integration and delivery pipeline. Both
-services are free of use for public repositories.
+Actions for the Continuous Integration and Continuous Delivery
+pipeline. Both services are free of charge for public repositories.
 
 You can follow Github's `official documentation`_ for creating the
 repository. Once you create the repository you need to configure the
 secrets used for deploying the HOP application to AWS:
 
-1. Open the repository settings
-2. Go to Security -> Secrets -> Actions
+1. Open the repository settings.
+2. Go to Security -> Secrets -> Actions.
 3. You will need to configure three secrets here with the values
    provided in the post installation steps of the boostrap process.
    * ``AWS_ACCESS_KEY_ID``
@@ -337,7 +354,7 @@ secrets used for deploying the HOP application to AWS:
    * ``AWS_DEFAULT_REGION``
 
 Then configure the local repository to point to Github's
-remote repository by:
+remote repository by running:
 
 .. code-block:: console
 
@@ -356,13 +373,13 @@ Deploy application to test environment
 --------------------------------------
 
 The first push to the repository won't trigger the pipeline, so you
-will have to make a second commit to procede.
+will have to make a second commit to proceed.
 
 Open the ``app/src/hop-tutorial/client/landing.cljs`` namespace using
 your favorite IDE and edit the ``"Your application is up and
 running"`` message to ``"Your application is up and running in AWS"``.
 
-And commit and push the change to Github:
+Now commit and push the change to Github:
 
 .. code-block:: console
 
@@ -373,20 +390,21 @@ And commit and push the change to Github:
 This second commit will start the pipeline which will perform the
 following steps:
 
-1. It ensures that the linting and format of the ``sh``, ``yaml``,
-   ``json`` and ``Dockerfile``` files is correct.
-2. It ensures that the linting and format of the Clojure project files
-   using ``clj-kondo``, ``eastwood`` and ``cljfmt``.
-3. The tests are executed.
-4. The application is deployed to AWS ElasticBeanstalk. For that the
+1. Linting and format checks of the ``sh``, ``yaml``, ``json`` and
+   ``Dockerfile`` files.
+2. Linting and format checks of the Clojure project files using
+   ``clj-kondo``, ``eastwood`` and ``cljfmt``.
+3. Executing tests.
+4. Deploying The application to AWS ElasticBeanstalk. For that the
    Docker production image is built and sent to AWS ECR first.
 
 At this point the application should be deployed to AWS. You can check
-that the deployment was succesfull in the AWS Console:
+that the deployment was successfull in the AWS Console:
 
 Log in into your AWS Account and go to the ElasticBeanstalk service.
 
-Now choose the hop-tutorial-test environment under the hop-tutorial application.
+Now choose the hop-tutorial-test environment under the hop-tutorial
+application.
 
 If the deployment was succesfull you will see a green check in the
 Health section. It might happen that when you open the page the
@@ -403,6 +421,6 @@ application's publicly available URL.
 
 When accessing it for the first time you will get a warning about the
 page certificate being invalid. That's expected as the application is
-using a self signed certificate created by the Bootstrap tool. You can
+using a self-signed certificate created by the Bootstrap tool. You can
 tell the browser to ignore the warning until you setup a real
 certificate.
