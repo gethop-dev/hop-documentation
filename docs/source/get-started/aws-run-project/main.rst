@@ -358,7 +358,7 @@ remote repository by running:
 
 .. code-block:: console
 
-   $: git remote set-url origin <github-repository-url>
+   $: git remote add origin <github-repository-url>
 
 And you can push your initial commit:
 
