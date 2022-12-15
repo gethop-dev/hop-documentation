@@ -326,6 +326,8 @@ port ``80`` instead.
 Open a web browser and go to ``http://localhost``. You should see
 HOP's welcome page there.
 
+.. image:: img/local-running-hop-app.png
+
 We won't make any change to the code now, so once you check that the
 application is running you can stop it by executing the following
 script:
@@ -352,6 +354,9 @@ secrets used for deploying the HOP application to AWS:
    * ``AWS_ACCESS_KEY_ID``
    * ``AWS_SECRET_ACCESS_KEY``
    * ``AWS_DEFAULT_REGION``
+
+
+.. image:: img/github-secrets.png
 
 Then configure the local repository to point to Github's
 remote repository by running:
