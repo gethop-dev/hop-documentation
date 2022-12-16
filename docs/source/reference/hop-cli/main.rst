@@ -274,6 +274,23 @@ User attributes in the form of ``ATTRIBUTE1=VAL1 ATTRIBUTE2=VAL2``
 
 ``-p, --temporary-password`` (string)
 
+Output
+++++++
+
+.. code-block:: clojure
+
+  {:success? true,
+   :user
+   {:Username "aeb8a8c5-f136-49ca-be39-3a4923c0e9a1",
+    :Attributes
+    [{:Name "sub", :Value "aeb8a8c5-f136-49ca-be39-3a4923c0e9a1"}
+     {:Name "name", :Value "TestUser"}
+     {:Name "email", :Value "testuser1@invalid.invalid"}],
+    :UserCreateDate #inst "2022-12-16T10:36:41.000-00:00",
+    :UserLastModifiedDate #inst "2022-12-16T10:36:41.000-00:00",
+    :Enabled true,
+    :UserStatus "FORCE_CHANGE_PASSWORD"}}
+
 aws cognito set-user-password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -336,6 +353,7 @@ Output
 ++++++
 
 .. code-block:: clojure
+
   {:success? true,
    :id-token
    "eyJraWQiOiJNTll6Z1VsR0VOQ0NBNUhYT0RGNFJcL1ArNmdSWml1MnJCMkNtYmRXaVZhND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJlZGU5MWJiMS00MGI2LTRjYzAtYTRmMS1lNWIzNDE5MzdlNjMiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfeWxZc1J5VFNkIiwiY29nbml0bzp1c2VybmFtZSI6ImVkZTkxYmIxLTQwYjYtNGNjMC1hNGYxLWU1YjM0MTkzN2U2MyIsIm9yaWdpbl9qdGkiOiI2YjAyZjNmNy03ZDY2LTRlYTMtODk2MC1jNTAwYTg1YmVlODciLCJhdWQiOiI3c3RobHRtZjU5a2ZoY2RhajRlanIzdTZzMSIsImV2ZW50X2lkIjoiZGI3M2ViYjUtY2IxMC00NTc3LTljMmYtYWI5Y2JlY2IzYjFiIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2NzExODYyMzAsImV4cCI6MTY3MTE4OTgzMCwiaWF0IjoxNjcxMTg2MjMwLCJqdGkiOiJiMzkyNzVhMy1hMTI4LTRkM2ItYjZlNS1hY2FjZDZjYzgxZjUiLCJlbWFpbCI6InRlc3RAbWFnbmV0LmNvb3AifQ.Oy6oSX3UUn8BxLZJbXD_9io7YpslfVQNne4aFkv7O18fBg0N6oCpkI3_kDuS1JSyvItF6xgA377v066hK8JBD_WqC2Cl4k61N79uCVLVCkyerrfEcVVHcX3khMeZaD3buv23p2qtyNK6Hhvghe-UXCJKSY5cyRtXSNlLTnoQleJB6anzALA4jh1L3fwEMFRvdaV36LA9MhTRbaW0gQUFj7P0DZC7DaaWjekGcrs3ro7ZH3ceOqXE-2pnD-pGaJ2JXIBMR_xxLHTjTDvvRORfHHu4UQ0x21znPBbfzVJYJDnDsIDD7Zw1HmlBZFV0RL6yDDS2DbHplJq8p3STtqXp1A"}
@@ -483,8 +501,33 @@ Options
 
 ``-u, --username`` (string)
 
+Output
+++++++
 
-aws cognito get-id-token
+.. code-block:: clojure
+
+   {:success? true,
+    :user
+    {:requiredActions [],
+     :email "hop-user@invalid.mail",
+     :username "hop-user",
+     :disableableCredentialTypes [],
+     :firstName "hop-user",
+     :emailVerified true,
+     :id "8bcafd15-6ea9-406a-abd3-1e20a2aef024",
+     :lastName "hop-user",
+     :notBefore 0,
+     :totp false,
+     :access
+     {:manageGroupMembership true,
+      :view true,
+      :mapRoles true,
+      :impersonate true,
+      :manage true},
+     :enabled true,
+     :createdTimestamp 1671186913182}}
+
+keycloak get-id-token
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Description
@@ -517,3 +560,12 @@ Options
 ``-u, --username`` (string)
 
 ``-p, --password`` (string)
+
+Output
+++++++
+
+.. code-block:: clojure
+
+   {:success? true,
+    :id-token
+    "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXdzZNeV9PUURuMWJGalRqQ0ZVR3NVaEVqbTBBZVRXM0x4RENYTl9YZElZIn0.eyJleHAiOjE2NzExODcyNTMsImlhdCI6MTY3MTE4NzE5MywiYXV0aF90aW1lIjowLCJqdGkiOiI0Zjc2MWVmMi0xNjc0LTQ4YTMtODk0YS00ZDdlMDY3ZGIyODciLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL21hc3RlciIsImF1ZCI6ImFkbWluLWNsaSIsInN1YiI6IjhiY2FmZDE1LTZlYTktNDA2YS1hYmQzLTFlMjBhMmFlZjAyNCIsInR5cCI6IklEIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0ZDAwMGIwLTY4NmItNDg2Ny1iNTk5LWRiYjNiNGJlYzNlMyIsImF0X2hhc2giOiI5Qk5fVmJBVFhhZmNCejRpQjdtdTl3IiwiYWNyIjoiMSIsInNpZCI6ImU0ZDAwMGIwLTY4NmItNDg2Ny1iNTk5LWRiYjNiNGJlYzNlMyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiaG9wLXVzZXIgaG9wLXVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJob3AtdXNlciIsImdpdmVuX25hbWUiOiJob3AtdXNlciIsImZhbWlseV9uYW1lIjoiaG9wLXVzZXIiLCJlbWFpbCI6ImhvcC11c2VyQGludmFsaWQubWFpbCJ9.V0BrThYtjhvXKm9WlNLuDVSLrucBqRk4QllOC8U8IZj45jDGST7oFkqpnGIP6xSRbebe4Ow--56huDiXdPcymG9_A9Om_EiUvTbHN-Lm9fhx3JHSjt1w7vQ82SJXM2GuaLoF3FNda8MDc23HcFvfUvCPT_k7oIIflLy5udv5SFP7nWCWLFM8pknucHGEpeLLvzAD3mgL0Evdyw6X9DH6goAy0lRW_XtLYoNQj8ArpS4ZOCP8hglp2D66RYgxVl8uf2taps_70LtnL8-IkAUGw_Rc9QDINOHwPK3AnsCPgRp1RuEJPXQLP6-mWfJ-41YaPgB-1V6uvv90pyA8Ef4csQ"}
