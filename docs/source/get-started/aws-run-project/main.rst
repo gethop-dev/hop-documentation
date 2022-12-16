@@ -403,13 +403,19 @@ following steps:
 4. Deploying The application to AWS ElasticBeanstalk. For that the
    Docker production image is built and sent to AWS ECR first.
 
+.. image:: img/github-actions-pipeline-run.png
+
 At this point the application should be deployed to AWS. You can check
 that the deployment was successfull in the AWS Console:
 
 Log in into your AWS Account and go to the ElasticBeanstalk service.
 
+.. image:: img/elasticbeanstalk-environment-list.png
+
 Now choose the hop-tutorial-test environment under the hop-tutorial
 application.
+
+.. image:: img/elasticbeanstalk-environment.png
 
 If the deployment was succesfull you will see a green check in the
 Health section. It might happen that when you open the page the
@@ -426,6 +432,11 @@ application's publicly available URL.
 
 When accessing it for the first time you will get a warning about the
 page certificate being invalid. That's expected as the application is
-using a self-signed certificate created by the Bootstrap tool. You can
-tell the browser to ignore the warning until you setup a real
+using a self-signed certificate created by the Bootstrap tool.
+
+.. image:: img/self-signed-certificate-warning.png
+
+You can tell the browser to ignore the warning until you setup a real
 certificate.
+
+.. image:: img/aws-running-hop-app.png
