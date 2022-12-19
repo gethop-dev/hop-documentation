@@ -3,11 +3,11 @@ Installation
 
 This document describes the steps for installing the HOP Command Line
 Tool. The main usage of the tool is bootstrapping new HOP-based web
-applications[#].
+applications[#]_.
 
-  [#] It also provides utilities for managing already deployed
-  HOP-based applications. All the available utilities are
-  described in the :doc:`/reference/hop-cli/main` page.
+   [#] It also provides utilities for managing already deployed
+   HOP-based applications. All the available utilities are
+   described in the :doc:`/reference/hop-cli/main` page.
 
 At the end of this tutorial you will be ready to bootstrap your first
 HOP-based web application.
