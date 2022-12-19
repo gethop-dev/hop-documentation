@@ -55,7 +55,52 @@ Inbound and Outbound traffic
 * Traffic from the public subnets to the Internet is allowed through
   the Internet Gateway.
 
+IAM groups, users and roles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following section lists the different group, users and roles
+created by the Bootstrap tool. The specific permissions attached to
+each entity can be consulted in the `Cloudformation stack
+definitions`_.
+
+IAM groups:
++++++++++++
+
+* ``<resource-name-prefix>-ci``
+  * Description: group for the user(s) used to run Continuous
+    Integration and Continuous Delivery pipelines.
+
+IAM users:
+++++++++++
+
+* ``<resource-name-prefix>-ci``
+  * Description: user for running the Continuous Integration and
+    Continuous Delivery pipelines.
+  * Groups: ``<resource-name-prefix>-ci``
+* ``<resource-name-prefix>-local-dev``
+  * Description: user for assumming the development IAM role used in
+    the development environment.
+  * Groups: None
+
+IAM roles:
+++++++++++
+
+* ``<resource-name-prefix>-rds-monitoring-role``
+  * Description: role to allow the RDS instances have enhanced monitoring.
+* ``<resource-name-prefix>-aws-elasticbeanstalk-service-role``
+  * Description: service role for the Elastic Beanstalk applications.
+* ``<project-name>-dev-role``
+  * Description: role with access to the AWS resources used during
+    local development. It will have more or less policies attached
+    depending on the selected optional AWS services.
+* ``<project-name>-<test/prod>-role``
+  * Description: role to give access to the AWS resources to the
+    testing and production environment Elastic Beanstalk instances. It
+    will have more or less policies attached depending on the selected
+    optional AWS services. One role for each environment is created.
+
 .. _AWS Cloudformation: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html
+.. _Cloudformation stack definitions: https://github.com/gethop-dev/hop-cli/tree/main/resources/infrastructure/cloudformation-templates
 .. _Account stack: https://github.com/gethop-dev/hop-cli/blob/main/resources/infrastructure/cloudformation-templates/account.yaml
 .. _Project stack: https://github.com/gethop-dev/hop-cli/blob/main/resources/infrastructure/cloudformation-templates/project.yaml
 .. _Local environment stack: https://github.com/gethop-dev/hop-cli/blob/main/resources/infrastructure/cloudformation-templates/local-environment.yaml
