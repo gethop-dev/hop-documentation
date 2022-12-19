@@ -21,3 +21,4 @@ Contents
 
    /reference/hop-cli/main
    /reference/hop-modules/main
+   /reference/aws-infrastructure/main
