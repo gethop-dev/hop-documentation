@@ -3,8 +3,8 @@
 # -- Project information
 
 project = 'HOP'
-copyright = '2022, HOP'
-author = 'HOP'
+copyright = 'This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.'
+author = 'Magnet S. Coop'
 
 release = '0.1'
 version = '0.1.0'
