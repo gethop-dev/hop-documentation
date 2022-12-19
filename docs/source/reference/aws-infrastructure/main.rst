@@ -1,8 +1,9 @@
 AWS infrastructure reference
 ============================
 
-When the AWS cloud provider is selected, the HOP Bootstrap tool will
-provision all the infrastructure needed for deploying the platform.
+When the AWS cloud provider is selected, the HOP Bootstrapping tool
+will provision all the infrastructure needed for deploying the
+platform.
 
 Cloudformation
 --------------
@@ -12,8 +13,8 @@ stack definitions can be found in the Bootstrapping tool's Github
 repository:
 
 * `Account stack`_: provisioning of resources that can be shared
-  amoung different HOP projects.
-* `Project stack`_: provisioning of resources that are project specific.
+  among different HOP projects.
+* `Project stack`_: provisioning of resources that are project-specific.
 * `Local environment stack`_: provisioning of resources used when developing locally.
 * `Cloud environment stack`_: provisioning of resources used in the
   testing and production environments. The stack is run once for each
@@ -30,9 +31,9 @@ infrastructure provisioned by the tool.
 When creating the production infrastructure the following resources
 are shared with the testing environment:
 
-* VPC, Subnets and networking related resources
-* Elastic Load Balancer
-* Elastic Container Registry
+* VPC, Subnets and networking-related resources.
+* Elastic Load Balancer.
+* Elastic Container Registry.
 
 .. note::
 
@@ -50,8 +51,8 @@ Inbound and Outbound traffic
   in port 443.
 * HTTP traffic is redirected to HTTPS in the load balancer.
 * In order to access to the internal network (e.g. to connect to the
-  RDS db instance from the local environment) `AWS Session Manager`_
-  must be used. No other inbound traffic is allowed.
+  RDS database instance from the local environment) `AWS Session
+  Manager`_ must be used. No other inbound traffic is allowed.
 * Traffic from the public subnets to the Internet is allowed through
   the Internet Gateway.
 
@@ -59,8 +60,8 @@ IAM groups, users and roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following section lists the different group, users and roles
-created by the Bootstrap tool. The specific permissions attached to
-each entity can be consulted in the `Cloudformation stack
+created by the Bootstrapping tool. The specific permissions attached
+to each entity can be consulted in the `Cloudformation stack
 definitions`_.
 
 IAM groups
@@ -74,7 +75,7 @@ IAM users
 
 * ``<resource-name-prefix>-ci``: user for running the Continuous
   Integration and Continuous Delivery pipelines. It belongs to the
-    ``<resource-name-prefix>-ci`` group.
+  ``<resource-name-prefix>-ci`` group.
 * ``<resource-name-prefix>-local-dev``: user for assumming the
   development IAM role used in the development environment.
 
@@ -82,7 +83,7 @@ IAM roles
 +++++++++
 
 * ``<resource-name-prefix>-rds-monitoring-role``: role to allow the
-  RDS instances have enhanced monitoring.
+  RDS instances to have enhanced monitoring.
 * ``<resource-name-prefix>-aws-elasticbeanstalk-service-role``:
   service role for the Elastic Beanstalk applications.
 * ``<project-name>-dev-role``: role with access to the AWS resources

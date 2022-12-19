@@ -8,7 +8,7 @@ Authentication and authorization
 --------------------------------
 
 * `buddy-auth.jwt-oidc`_ - Library implementing a
-  :duct.middleware.buddy/authentication compatible JWT token
+  ``:duct.middleware.buddy/authentication`` compatible JWT token
   validation function for OpenID Connect ID Tokens.
 * `rbac`_ - Library that provides role-based access control.
 * `session.re-frame.cognito`_ - A library that provides re-frame
@@ -55,7 +55,7 @@ Messaging protocols
 Persistence
 -----------
 
-* `sql-utils`_ - Thin convenience wapper over clojure.java.jdbc.
+* `sql-utils`_ - Thin convenience wrapper over clojure.java.jdbc.
 
 Encryption
 ----------

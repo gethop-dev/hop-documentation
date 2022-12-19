@@ -2,12 +2,12 @@ Installation
 ============
 
 This document describes the steps for installing the HOP Command Line
-Tool. The main usage of the tool is bootstraping new HOP based web
+Tool. The main usage of the tool is bootstrapping new HOP-based web
 platforms, but it also provides utilities for managing already
 deployed applications. All the available utilities are described in
 the :doc:`/reference/hop-cli/main` page.
 
-At the end of this tutorial you will be ready to start bootstraping
+At the end of this tutorial you will be ready to start bootstrapping
 your first HOP based project.
 
 Prerequisites
@@ -47,7 +47,7 @@ Install OpenSSL
 ++++++++++++++++
 
 OpenSSL is a widely used tool, so you might already have it installed
-in your system. You can check that by running the following command:
+on your system. You can check that by running the following command:
 
 .. code-block:: console
 
@@ -89,11 +89,11 @@ Download the HOP Command Line Tool
 
 The HOP Command Line Tool is distributed as a Babashka Uberjar. All
 the required Clojure dependencies and resources are packed in a single
-jar file that can be run from the command line using Babashka.
+JAR file that can be run from the command line using Babashka.
 
 The mentioned file can be downloaded from the `Github Releases
 section`_. Download the ``hop-cli.jar`` file from the latest available
-release, and place it in the directory in which you will run the tool.
+release.
 
 .. _Github Releases section: https://github.com/gethop-dev/hop-cli/releases
 
@@ -114,7 +114,12 @@ by the tool will be printed.
      aws        AWS utility commands
      keycloak   Keycloak utility commands
 
-You are now ready for bootstraping your first HOP project. You can
+.. note::
+
+   You can save the ``hop-cli.jar`` in any directory of your
+   choice. You just need to specify the path whenever executing ``bb``.
+
+You are now ready for bootstrapping your first HOP project. You can
 follow the :doc:`/get-started/aws-run-project/main` tutorial for
-creating and deploying a HOP application into the Amazon Web Services
-cloud provider.
+creating and deploying a HOP application on Amazon Web Services cloud
+provider.

@@ -74,6 +74,7 @@ Command for provisioning the infrastructure for the production environment.
 
 Synopsis
 ++++++++
+
 .. code-block:: console
 
    $: bb hop-cli.jar bootstrap prod-infrastructure
@@ -114,6 +115,7 @@ Synopsis
 ++++++++
 
 .. code-block:: console
+
    $: bb aws-cli.jar aws env-vars sync
       --project-name <value>
       --environment <value>
@@ -135,6 +137,7 @@ Path to a file with a list of environment variables with the following
 format:
 
 .. code-block:: text
+
    ENV_VAR_1=VALUE ONE
    # Comments are ignored
    ENV_VAR_2=VALUE TWO
@@ -156,6 +159,7 @@ Synopsis
 ++++++++
 
 .. code-block:: console
+
    $: bb aws-cli.jar aws env-vars download
       --project-name <value>
       --environment <value>
@@ -199,6 +203,7 @@ running this command.
 Synopsis
 ++++++++
 .. code-block:: console
+
    $: bb aws-cli.jar aws env-vars apply-changes
       --project-name <value>
       --environment <value>
@@ -417,9 +422,9 @@ User attributes in the form of ``ATTRIBUTE1=VAL1 ATTRIBUTE2=VAL2``
 
 ``--last-name`` (string)
 
-``email`` (string)
+``--email`` (string)
 
-``email-verified`` (string)
+``--email-verified`` (string)
 
 keycloak set-user-password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -477,7 +482,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar keycloak set-user-password
+   $: bb hop-cli.jar keycloak get-user
       --base-url <value>
       --admin-realm-name <value>
       --admin-client-id <value>
