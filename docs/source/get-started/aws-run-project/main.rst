@@ -134,7 +134,7 @@ file you can run the following command:
 
 .. code-block:: console
 
-   $: bb hop-cli.jar bootstrap copy-settings --dst settings.edn
+   $: bb hop-cli.jar bootstrap copy-settings --settings-file-path settings.edn
 
 The command will create an `edn` file in the current directory.
 
