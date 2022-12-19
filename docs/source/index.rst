@@ -20,3 +20,4 @@ Contents
    :caption: Reference
 
    /reference/hop-cli/main
+   /reference/hop-modules/main
