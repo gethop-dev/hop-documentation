@@ -3,7 +3,7 @@
 # -- Project information
 
 project = 'HOP'
-copyright = 'This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.'
+copyright = 'This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/'
 author = 'Magnet S. Coop'
 
 release = '0.1'
