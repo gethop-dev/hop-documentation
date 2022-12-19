@@ -50,7 +50,7 @@ Inbound and Outbound traffic
 * The load balancer allows inbound HTTP traffic in port 80 and HTTPS
   in port 443.
 * HTTP traffic is redirected to HTTPS in the load balancer.
-* In order to access to the internal network (e.g. to connect to the
+* In order to access to the internal network (e.g., to connect to the
   RDS database instance from the local environment) `AWS Session
   Manager`_ must be used. No other inbound traffic is allowed.
 * Traffic from the public subnets to the Internet is allowed through
