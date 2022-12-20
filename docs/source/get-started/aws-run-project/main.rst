@@ -405,7 +405,7 @@ will have to make a second commit to proceed.
 
 Open the ``app/src/hop_tutorial/client/landing.cljs`` namespace using
 your favorite IDE and edit the ``"Your application is up and
-running"`` message to ``"Your application is up and running on AWS"``.
+running"`` message to ``"Your application is up and running on AWS"!!!!!!``.
 
 Now commit and push the change to Github:
 
