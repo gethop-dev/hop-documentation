@@ -176,6 +176,13 @@ editor and edit the following options:
   tutorial we will select some basic ones. We will set the value to
   ``[:core :frontend :aws :ci]``
 
+.. note::
+
+   If this is the second time you are following this tutorial or if
+   you already have an existing AWS account, please refer to
+   :doc:`/get-started/aws-run-project/appendix/existing-aws-account-settings`
+   document for further considerations.
+
 Run the bootstrap command
 -------------------------
 
