@@ -286,14 +286,16 @@ the first time you bootstrap a HOP project.
 Then you will have to configure the role used for running the
 ``hop-tutorial`` project. That role contains the specific permissions
 for interacting with the resources in the dev environment for the
-``hop-tutorial`` project. You will have to edit the ``~/.aws/config`` file
-and add the rows printed by the HOP Boostrapping tool:
+``hop-tutorial`` project. You will have to edit the ``~/.aws/config``
+file and add the rows printed by the HOP Boostrapping tool. It should
+look like the following:
 
 .. code-block:: python
 
+   # Example configuration
    [profile hop/hop-tutorial-dev-env]
    source_profile=hop/hop-local-dev
-   role_arn=arn:aws:iam::XXXXXXXXXX:role/hop-tutorial-eb
+   role_arn=arn:aws:iam::XXXXXXXXXX:role/hop-tutorial-dev-role
 
 The tool will also print the AWS Access Key ID and AWS Secret Access
 Key for the CI/CD user. Take note of them, as you will need them in a
