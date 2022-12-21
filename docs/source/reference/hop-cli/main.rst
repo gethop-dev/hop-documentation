@@ -121,6 +121,7 @@ Synopsis
       --environment <value>
       --file <value>
       --kms-key-alias <value>
+      [--region <value>]
 
 Options
 +++++++
@@ -146,6 +147,8 @@ format:
 
 Alias of the KMS Key that will be used to encrypt the environment variables.
 
+``-r, --region`` (string)
+
 env-vars download
 ~~~~~~~~~~~~~~~~
 
@@ -165,6 +168,7 @@ Synopsis
       --environment <value>
       --file <value>
       --kms-key-alias <value>
+      [--region <value>]
 
 Options
 +++++++
@@ -182,6 +186,8 @@ Path where the environment variables will be saved to.
 ``-k, --kms-key-alias`` (string)
 
 Alias of the KMS Key that will be used to decrypt the environment variables.
+
+``-r, --region`` (string)
 
 Outputs
 +++++++
@@ -207,6 +213,7 @@ Synopsis
    $: bb aws-cli.jar aws env-vars apply-changes
       --project-name <value>
       --environment <value>
+      [--region <value>]
 
 Options
 +++++++
@@ -215,6 +222,7 @@ Options
 
 ``-e, --environment`` (string)
 
+``-r, --region`` (string)
 
 aws ssl
 ------------
@@ -234,10 +242,12 @@ Synopsis
 .. code-block:: console
 
    $: bb hop-cli.jar aws ssl create-and-upload-self-signed-certificate
+      [--region <value>]
 
 Options
 +++++++
-None
+
+``-r, --region`` (string)
 
 Outputs
 +++++++
@@ -264,6 +274,7 @@ Synopsis
       --username <value>
       [--attributes <value>]
       [--temporary-password <value>]
+      [--region <value>]
 
 
 Options
@@ -278,6 +289,8 @@ Options
 User attributes in the form of ``ATTRIBUTE1=VAL1 ATTRIBUTE2=VAL2``
 
 ``-p, --temporary-password`` (string)
+
+``-r, --region`` (string)
 
 Output
 ++++++
@@ -314,6 +327,7 @@ Synopsis
       --username <value>
       --password <value>
       [--temporary? <value>]
+      [--region <value>]
 
 Options
 +++++++
@@ -325,6 +339,8 @@ Options
 ``-p, --password`` (string)
 
 ``-t, --temporary?`` (boolean)
+
+``-r, --region`` (string)
 
 aws cognito get-id-token
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -343,6 +359,7 @@ Synopsis
       --user-pool-id <value>
       --username <value>
       --password <value>
+      [--region <value>]
 
 
 Options
@@ -353,6 +370,8 @@ Options
 ``-u, --username`` (string)
 
 ``-u, --password`` (string)
+
+``-r, --region`` (string)
 
 Output
 ++++++
