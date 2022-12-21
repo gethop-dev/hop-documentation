@@ -167,14 +167,54 @@ following fields:
   the user can select. The selection is done using the ``value`` field
   by specifying the name(s) of the selected branch(es).
 
-Having that structure in mind, open the file with your favorite text
-editor and edit the following options:
+.. code:: Clojure
 
-* ``project`` -> ``name`` -> ``value``: We will set the project name to ``"hop-tutorial"``.
-* ``project`` -> ``profiles`` -> ``value``: HOP offers multiple
-  profiles that enhance the bootstrapped project. But for this
-  tutorial we will select some basic ones. We will set the value to
-  ``[:core :frontend :aws :ci]``
+   [{:name :root-node
+     :tag "Root node"
+     :type :plain-group
+     :value [{:name :node-1
+              :tag "Node 1"
+              :type :single-choice
+              :value :opt-1
+              :choices [{:name :opt-1
+                         :tag "Opt 1"
+                         :type :string
+                         :value "opt 1 value"}
+                         {:name :opt-2
+                         :tag "Opt 2"
+                         :type :string
+                         :value "opt 2 value"}]}
+              {:name :node-2
+               :tag "Node 2"
+               :type :multiple-choice
+               :value [:opt-1 :opt-2]
+               :choices [{:name :opt-1
+                         :tag "Opt 1"
+                         :type :integer
+                         :value 1}
+                         {:name :opt-2
+                         :tag "Opt 2"
+                         :type :integer
+                         :value 2}]}]}]
+
+In order to navigate the data structure above we will use the
+following notation:
+
+* node-1 -> ... -> node-n.property
+
+For example if we want to reference the value of ``node-1`` we would
+use the following:
+
+* ``root-node`` -> ``node-1.value``
+
+Having that structure and notation in mind, open the file with your
+favorite text editor and edit the following options:
+
+* ``project`` -> ``name.value``: We will set the project name to ``"hop-tutorial"``.
+* ``project`` -> ``profiles.value``: HOP offers multiple profiles that
+  enhance the bootstrapped project. But for this tutorial we will
+  select some basic ones. We will set the value to ``[:core :frontend
+  :aws :ci]``
 
 .. note::
 
