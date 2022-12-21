@@ -4,7 +4,7 @@ How to delete AWS resources created by HOP
 This guide shows how to delete all the AWS resources created by the
 HOP bootstrapping tool. Most of the resources will be deleted in batch
 by Cloudformation. But some require manual steps due to the accidental
-data loss protection mechanism that Cloudwatch enforces.
+data loss protection mechanism that Cloudformation enforces.
 
 Some of the following steps depend on each other, so make sure you
 follow them in the described order.
@@ -35,7 +35,7 @@ instance".
 Delete the Cognito User Pool
 ----------------------------
 
-Cloudformation won't delete the Cognito User Pool, so it has to be
+Cloudformation will not delete the Cognito User Pool, so it has to be
 deleted manually.
 
 Go to the Cognito Console and find the HOP User Pool. HOP creates one
@@ -57,10 +57,16 @@ environments. So you should only perform this step if you are
 completly deleting a HOP project. Skip this step if you just want to
 delete one environment.
 
-Go to the ECR repository
+Go to the ECR HOP project repository in the AWS Console.
 
-Delete environment variables in SSM
------------------------------------
+.. image:: img/ecr-project-repo.png
+
+Select and delete all the images.
+
+.. image:: img/ecr-project-imgs-to-delete.png
+
+Delete environment variables in SSM Parameter Store
+---------------------------------------------------
 
 The environment variables stored in SSM Parameter Store should be
 deleted manually too. They can be deleted manually from the AWS
@@ -69,7 +75,7 @@ Console, but using the HOP Command Line Tool is more convenient.
 The ``aws env-vars sync`` command is used to sync the environment
 variables between a file in disk and the variables stored in the
 Parameter Store. For deleting all the stored environment variables in
-SSM you can just provide an empty file to the command.
+SSM Parameter Store you can just provide an empty file to the command.
 
 Create the empty file:
 
@@ -77,7 +83,7 @@ Create the empty file:
 
    $: touch empty-variables.env
 
-And then use the Hop Command Line tool to sync the Parameter Store
+And then use the HOP Command Line Tool to sync the Parameter Store
 with the empty file:
 
 .. code-block:: console
@@ -110,10 +116,10 @@ HOP uses four different stacks for creating it's resources:
 * Account stack:
 
   * This stack is shared between all your HOP projects, so it only
-  should be deleted if you want to completly remove HOP from your AWS
-  account.
+    should be deleted if you want to completly remove HOP from your AWS
+    account.
   * The default name for the stack is ``hop-account``, but you might
-    have renamed it in the ``settings.edn``file.
+    have renamed it in the ``settings.edn`` file.
   * Delete the rest of the HOP stacks before attemping to delete the
     Account stack.
 
@@ -122,7 +128,7 @@ HOP uses four different stacks for creating it's resources:
   * The stack should only be deleted if you want to completly remove a
     HOP project from your AWS account.
   * The default name for the stack is ``hop-project``, but you might
-    have renamed it in the ``settings.edn``file.
+    have renamed it in the ``settings.edn`` file.
   * Delete the environment stacks before deleting the Project stack.
 
 * Development environment stack:
@@ -156,14 +162,14 @@ Take into account that deleting the stacks might take several minutes.
 .. note::
 
    Make sure you only delete the stacks that you expect. Even if you
-   have never used Cloudformation explicitly there are certain AWS
+   have never used Cloudformation explicitly, there are certain AWS
    services (e.g., Elastic Beanstalk) that use Cloudformation
    underneath and create stacks on your behalf.
 
 Delete the self-signed certificate
 ---------------------------------
 
-The HOP Bootstrapping Tool creates a self signed SSL certificate. In
+The HOP Bootstrapping Tool creates a self-signed SSL certificate. In
 order to delete it go to the Certificate Manager console.
 
 Find The certificate which ``Domain name`` is ``self-signed.invalid``
@@ -175,7 +181,7 @@ Delete the RDS DB snapshot
 --------------------------
 
 Cloudformation will create a database snapshot before deleting the
-instance. If you are not interested in keeping it you can remove it
+instance. If you are not interested in keeping it, you can remove it
 from the RDS Console.
 
 In the RDS sidebar go to ``Snapshots``, and find and delete the snapshot.
