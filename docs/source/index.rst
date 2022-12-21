@@ -17,6 +17,12 @@ Contents
 
 .. toctree::
    :maxdepth: 2
+   :caption: How-To Guides
+
+   /how-to/delete-aws-resources/main
+
+.. toctree::
+   :maxdepth: 2
    :caption: Reference
 
    /reference/hop-cli/main
