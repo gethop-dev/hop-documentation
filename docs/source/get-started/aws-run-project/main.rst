@@ -296,6 +296,7 @@ look like the following:
    [profile hop/hop-tutorial-dev-env]
    source_profile=hop/hop-local-dev
    role_arn=arn:aws:iam::XXXXXXXXXX:role/hop-tutorial-dev-role
+   region=eu-west-1
 
 The tool will also print the AWS Access Key ID and AWS Secret Access
 Key for the CI/CD user. Take note of them, as you will need them in a
