@@ -215,6 +215,12 @@ favorite text editor and edit the following options:
   enhance the bootstrapped project. But for this tutorial we will
   select some basic ones. We will set the value to ``[:core :frontend
   :aws :ci]``
+* ``cloud-provider`` -> ``aws`` -> ``account`` -> ``region.value``:
+  The AWS region you want to create the project resources in. Change
+  to your desired region. As of now, the HOP Bootstrapping Tool was
+  tested on ``eu-west-1`` AWS region. So we recommend you to use that
+  region in order to ensure that all the services required by the HOP
+  Bootstrapping Tool will be available.
 
 .. note::
 
