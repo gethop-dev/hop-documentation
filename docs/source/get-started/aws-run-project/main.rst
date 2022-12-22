@@ -467,7 +467,7 @@ Now commit and push the change to Github:
 
 .. code-block:: console
 
-   $: git add app/src/hop-tutorial/client/landing.cljs
+   $: git add app/src/hop_tutorial/client/landing.cljs
    $: git commit -m "Change landing message"
    $: git push
 
