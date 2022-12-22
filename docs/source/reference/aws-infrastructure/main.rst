@@ -1,16 +1,16 @@
 AWS infrastructure reference
 ============================
 
-When the AWS cloud provider is selected, the HOP Bootstrapping tool
-will provision all the infrastructure needed for deploying the
-platform.
+When the AWS cloud provider is selected, the HOP CLI will provision
+all the infrastructure needed for deploying the platform.
 
 Cloudformation
 --------------
 
 For provisioning the infrastructure `AWS Cloudformation`_ is used. The
-stack definitions can be found in the Bootstrapping tool's Github
-repository:
+stack definitions can be found in the `HOP CLI's GitHub repository`_:
+
+.. _`HOP CLI's GitHub repository`: https://github.com/gethop-dev/hop-cli
 
 * `Account stack`_: provisioning of resources that can be shared
   among different HOP projects.
@@ -32,14 +32,13 @@ When creating the production infrastructure the following resources
 are shared with the testing environment:
 
 * VPC, Subnets and networking-related resources.
-* Elastic Load Balancer.
-* Elastic Container Registry.
+* AWS Elastic Load Balancer.
+* AWS Elastic Container Registry.
 
 .. note::
 
    S3, RDS, Cloudwatch and Cognito resources are optional, and the
-   user can choose to provision them or not in the ``settings.edn``
-   file.
+   user can choose to provision them or not in the settings file.
 
 Security considerations
 -----------------------
@@ -60,9 +59,8 @@ IAM groups, users and roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following section lists the different group, users and roles
-created by the Bootstrapping tool. The specific permissions attached
-to each entity can be consulted in the `Cloudformation stack
-definitions`_.
+created by the HOP CLI. The specific permissions attached to each
+entity can be consulted in the `Cloudformation stack definitions`_.
 
 IAM groups
 ++++++++++
@@ -85,12 +83,12 @@ IAM roles
 * ``<resource-name-prefix>-rds-monitoring-role``: role to allow the
   RDS instances to have enhanced monitoring.
 * ``<resource-name-prefix>-aws-elasticbeanstalk-service-role``:
-  service role for the Elastic Beanstalk applications.
+  service role for the AWS Elastic Beanstalk applications.
 * ``<project-name>-dev-role``: role with access to the AWS resources
   used during local development. It will have more or less policies
   attached depending on the selected optional AWS services.
 * ``<project-name>-<test/prod>-role``: role to give access to the AWS
-  resources to the testing and production environment Elastic
+  resources to the testing and production environment AWS Elastic
   Beanstalk instances. It will have more or less policies attached
   depending on the selected optional AWS services. One role for each
   environment is created.

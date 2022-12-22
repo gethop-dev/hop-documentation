@@ -1,29 +1,29 @@
-HOP Command Line Tool reference
-===============================
+HOP CLI reference
+=================
 
 bootstrap
 ---------
 
 bootstrap copy-settings
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Description
 +++++++++++
-Command for getting a copy of the sample ``settings.edn`` file used by
-the Bootstrap tool.
+Command for getting a copy of the sample settings file used by the
+HOP CLI.
 
 Synopsis
 ++++++++
 .. code-block:: console
 
-   $: bb hop-cli.jar bootstrap copy-settings
+   $ bb hop-cli.jar bootstrap copy-settings
       --settings-file-path <value>
 
 Options
 +++++++
 ``-s, --settings-file-path`` (string)
 
-Path where the ``settings.edn`` file will be copied to.
+Path where the settings file will be copied to.
 
 Output
 ++++++
@@ -41,7 +41,7 @@ Synopsis
 ++++++++
 .. code-block:: console
 
-   $: bb hop-cli.jar bootstrap new-project
+   $ bb hop-cli.jar bootstrap new-project
       --settings-file-path <value>
       --target-project-dir <value>
 
@@ -50,7 +50,7 @@ Options
 
 ``-s, --settings-file-path`` (string)
 
-Path to the HOP CLI ``settings.edn`` file.
+Path to the HOP CLI settings file.
 
 ``-d, --target-project-dir`` (string)
 
@@ -77,7 +77,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar bootstrap prod-infrastructure
+   $ bb hop-cli.jar bootstrap prod-infrastructure
       --settings-file-path <value>
 
 
@@ -86,8 +86,8 @@ Options
 
 ``-s, --settings-file-path`` (string)
 
-Path to the HOP CLI ``settings.edn`` file. It should be the same file
-used when bootstrapping the project.
+Path to the HOP CLI settings file. It should be the same file used
+when bootstrapping the project.
 
 Outputs
 +++++++
@@ -100,7 +100,7 @@ aws env-vars
 ------------
 
 Commands for getting, setting and updating environment variables in
-Elastic Beanstalk using SSM Parameter Store.
+AWS Elastic Beanstalk using SSM Parameter Store.
 
 env-vars sync
 ~~~~~~~~~~~~~
@@ -116,7 +116,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb aws-cli.jar aws env-vars sync
+   $ bb aws-cli.jar aws env-vars sync
       --project-name <value>
       --environment <value>
       --file <value>
@@ -150,7 +150,7 @@ Alias of the KMS Key that will be used to encrypt the environment variables.
 ``-r, --region`` (string)
 
 env-vars download
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Description
 +++++++++++
@@ -163,7 +163,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb aws-cli.jar aws env-vars download
+   $ bb aws-cli.jar aws env-vars download
       --project-name <value>
       --environment <value>
       --file <value>
@@ -200,17 +200,17 @@ env-vars apply-changes
 Description
 +++++++++++
 
-Command for triggering an Elastic Beanstalk environment restart. In
-order to update the environment variables in Elastic Beanstalk, the
-environment has to be restarted. This can be done automatically by AWS
-(deploying a new application version...), using the AWS Console, or by
-running this command.
+Command for triggering an AWS Elastic Beanstalk environment
+restart. In order to update the environment variables in AWS Elastic
+Beanstalk, the environment has to be restarted. This can be done
+automatically by AWS (deploying a new application version...), using
+the AWS Console, or by running this command.
 
 Synopsis
 ++++++++
 .. code-block:: console
 
-   $: bb aws-cli.jar aws env-vars apply-changes
+   $ bb aws-cli.jar aws env-vars apply-changes
       --project-name <value>
       --environment <value>
       [--region <value>]
@@ -228,7 +228,7 @@ aws ssl
 ------------
 
 ssl create-and-upload-self-signed-certificate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Description
 +++++++++++
@@ -241,8 +241,8 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar aws ssl create-and-upload-self-signed-certificate
-      [--region <value>]
+   $ bb hop-cli.jar aws ssl create-and-upload-self-signed-certificate
+     [--region <value>]
 
 Options
 +++++++
@@ -257,7 +257,7 @@ aws cognito
 -----------
 
 aws cognito create-user
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 Description
 +++++++++++
@@ -269,7 +269,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar aws cognito create-user
+   $ bb hop-cli.jar aws cognito create-user
       --user-pool-id <value>
       --username <value>
       [--attributes <value>]
@@ -322,7 +322,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar aws cognito set-user-password
+   $ bb hop-cli.jar aws cognito set-user-password
       --user-pool-id <value>
       --username <value>
       --password <value>
@@ -355,7 +355,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar aws cognito get-id-token
+   $ bb hop-cli.jar aws cognito get-id-token
       --user-pool-id <value>
       --username <value>
       --password <value>
@@ -398,7 +398,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar keycloak create-user
+   $ bb hop-cli.jar keycloak create-user
       --base-url <value>
       --admin-realm-name <value>
       --admin-client-id <value>
@@ -458,7 +458,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar keycloak set-user-password
+   $ bb hop-cli.jar keycloak set-user-password
       --base-url <value>
       --admin-realm-name <value>
       --admin-client-id <value>
@@ -501,7 +501,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar keycloak get-user
+   $ bb hop-cli.jar keycloak get-user
       --base-url <value>
       --admin-realm-name <value>
       --admin-client-id <value>
@@ -564,7 +564,7 @@ Synopsis
 
 .. code-block:: console
 
-   $: bb hop-cli.jar keycloak get-id-token
+   $ bb hop-cli.jar keycloak get-id-token
       --base-url <value>
       --realm-name <value>
       --client-id <value>

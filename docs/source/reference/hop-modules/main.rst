@@ -1,5 +1,5 @@
 HOP Module reference
-===================
+====================
 
 HOP offers various modules or libraries that extend the functionality
 of the platform.
@@ -31,7 +31,7 @@ Business Intelligence
   associated users and organizations in Grafana.
 
 Observability
-------------
+-------------
 
 * `timbre.appenders.cloudwatch`_ - Cloudwatch Timbre log appender with
   batching and rate limiting.

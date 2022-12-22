@@ -13,7 +13,7 @@ Contents
    :caption: Get started
 
    /get-started/installation/main
-   /get-started/aws-run-project/main
+   /get-started/run-hop-application-on-aws/main
 
 .. toctree::
    :maxdepth: 2
