@@ -25,7 +25,7 @@ Contents
    :maxdepth: 2
    :caption: Reference
 
-   /references/glossary/main
+   /reference/glossary/main
    /reference/hop-cli/main
    /reference/hop-modules/main
    /reference/aws-infrastructure/main
