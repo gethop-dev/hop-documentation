@@ -382,6 +382,49 @@ Output
    :id-token
    "eyJraWQiOiJNTll6Z1VsR0VOQ0NBNUhYT0RGNFJcL1ArNmdSWml1MnJCMkNtYmRXaVZhND0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJlZGU5MWJiMS00MGI2LTRjYzAtYTRmMS1lNWIzNDE5MzdlNjMiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfeWxZc1J5VFNkIiwiY29nbml0bzp1c2VybmFtZSI6ImVkZTkxYmIxLTQwYjYtNGNjMC1hNGYxLWU1YjM0MTkzN2U2MyIsIm9yaWdpbl9qdGkiOiI2YjAyZjNmNy03ZDY2LTRlYTMtODk2MC1jNTAwYTg1YmVlODciLCJhdWQiOiI3c3RobHRtZjU5a2ZoY2RhajRlanIzdTZzMSIsImV2ZW50X2lkIjoiZGI3M2ViYjUtY2IxMC00NTc3LTljMmYtYWI5Y2JlY2IzYjFiIiwidG9rZW5fdXNlIjoiaWQiLCJhdXRoX3RpbWUiOjE2NzExODYyMzAsImV4cCI6MTY3MTE4OTgzMCwiaWF0IjoxNjcxMTg2MjMwLCJqdGkiOiJiMzkyNzVhMy1hMTI4LTRkM2ItYjZlNS1hY2FjZDZjYzgxZjUiLCJlbWFpbCI6InRlc3RAbWFnbmV0LmNvb3AifQ.Oy6oSX3UUn8BxLZJbXD_9io7YpslfVQNne4aFkv7O18fBg0N6oCpkI3_kDuS1JSyvItF6xgA377v066hK8JBD_WqC2Cl4k61N79uCVLVCkyerrfEcVVHcX3khMeZaD3buv23p2qtyNK6Hhvghe-UXCJKSY5cyRtXSNlLTnoQleJB6anzALA4jh1L3fwEMFRvdaV36LA9MhTRbaW0gQUFj7P0DZC7DaaWjekGcrs3ro7ZH3ceOqXE-2pnD-pGaJ2JXIBMR_xxLHTjTDvvRORfHHu4UQ0x21znPBbfzVJYJDnDsIDD7Zw1HmlBZFV0RL6yDDS2DbHplJq8p3STtqXp1A"}
 
+aws rds start-port-forwarding-session
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Description
++++++++++++
+
+Execute command to start a port forwarding session to a RDS instance.
+
+Synopsis
+++++++++
+
+.. code-block:: console
+
+   $ bb hop-cli.jar aws rds start-port-forwarding-session
+      --project-name <value>
+      --environment <value>
+      --local-port <value>
+      [--region <value>]
+
+Options
++++++++
+
+``-p, --project-name`` (string)
+
+``-e, --environment`` (string)
+
+``-lp, --local-port`` (string)
+
+``-r, --region`` (string)
+
+Output
+++++++
+
+If you execute the command to port-forward to the local port 5433, you will see the following output:
+
+.. code-block:: text
+
+   Running AWS Session Manager. Please, press ctrl+c in order to cancel the process.
+
+   Starting session with SessionId: your-user-09f13864467cc8bb8
+   Port 5433 opened for sessionId your-user-09f13864467cc8bb8.
+   Waiting for connections...
+
 keycloak
 ---------
 
