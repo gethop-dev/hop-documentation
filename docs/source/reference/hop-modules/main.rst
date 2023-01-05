@@ -79,8 +79,8 @@ Electronic signatures
 .. note::
 
    The listed modules have been developed with HOP in mind, and they
-   have been designed to be effortessly integrated in the
-   platform. Nevertheless, they can be also used in non HOP projects.
+   have been designed to be effortlessly integrated in the
+   HOP Platform. Nevertheless, they can be also used in non-HOP applications.
 
 
 .. _timbre.appenders.cloudwatch: https://github.com/gethop-dev/timbre.appenders.cloudwatch

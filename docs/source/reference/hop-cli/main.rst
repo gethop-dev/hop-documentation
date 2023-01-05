@@ -1,5 +1,5 @@
-HOP CLI reference
-=================
+HOP Command Line Interface tool (HOP CLI) reference
+===================================================
 
 bootstrap
 ---------
@@ -34,7 +34,7 @@ bootstrap new-project
 
 Description
 +++++++++++
-Command for bootstraping a new HOP based project. That includes
+Command for bootstrapping a new HOP Application. That includes
 provisioning the infrastructure and generating the project files.
 
 Synopsis
@@ -59,10 +59,10 @@ Directory in which the new project will be created.
 Output
 ++++++
 
-The project will be created in the specified ``target-project-dir``
+The HOP Project will be created in the specified ``target-project-dir``
 directory.
 
-The program will also display post-installation messages containing
+The HOP CLI will also display post-installation messages containing
 actions that have to be performed manually to complete the bootstrap.
 
 bootstrap prod-infrastructure
@@ -87,12 +87,12 @@ Options
 ``-s, --settings-file-path`` (string)
 
 Path to the HOP CLI settings file. It should be the same file used
-when bootstrapping the project.
+when bootstrapping the HOP Application.
 
 Outputs
 +++++++
 
-The program will also display post-installation messages containing
+The HOP CLI will also display post-installation messages containing
 actions that have to be performed manually to complete the production
 environment setup.
 
@@ -100,7 +100,7 @@ aws env-vars
 ------------
 
 Commands for getting, setting and updating environment variables in
-AWS Elastic Beanstalk using SSM Parameter Store.
+AWS Elastic Beanstalk using AWS SSM Parameter Store.
 
 env-vars sync
 ~~~~~~~~~~~~~
@@ -109,7 +109,7 @@ Description
 +++++++++++
 
 Command for synchronizing local environment variables with the remote
-environment variable storage in SSM Parameter Store.
+environment variables storage in AWS SSM Parameter Store.
 
 Synopsis
 ++++++++
@@ -145,7 +145,7 @@ format:
 
 ``-k, --kms-key-alias`` (string)
 
-Alias of the KMS Key that will be used to encrypt the environment variables.
+Alias of the AWS KMS Key that will be used to encrypt the environment variables.
 
 ``-r, --region`` (string)
 
@@ -185,7 +185,7 @@ Path where the environment variables will be saved to.
 
 ``-k, --kms-key-alias`` (string)
 
-Alias of the KMS Key that will be used to decrypt the environment variables.
+Alias of the AWS KMS Key that will be used to decrypt the environment variables.
 
 ``-r, --region`` (string)
 
@@ -251,7 +251,7 @@ Options
 
 Outputs
 +++++++
-None
+None.
 
 aws cognito
 -----------
@@ -262,7 +262,7 @@ aws cognito create-user
 Description
 +++++++++++
 
-Create user in the specified Cognito User Pool.
+Create user in the specified AWS Cognito User Pool.
 
 Synopsis
 ++++++++
@@ -392,6 +392,11 @@ Description
 +++++++++++
 
 Execute command to start a port forwarding session to a RDS instance.
+
+.. warning::
+
+   In order to use this command you will need to have installed `awscli`_
+   and the `AWS Session Manager plugin`_ for the mentioned tool.
 
 Synopsis
 ++++++++
@@ -639,3 +644,6 @@ Output
    {:success? true,
     :id-token
     "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXdzZNeV9PUURuMWJGalRqQ0ZVR3NVaEVqbTBBZVRXM0x4RENYTl9YZElZIn0.eyJleHAiOjE2NzExODcyNTMsImlhdCI6MTY3MTE4NzE5MywiYXV0aF90aW1lIjowLCJqdGkiOiI0Zjc2MWVmMi0xNjc0LTQ4YTMtODk0YS00ZDdlMDY3ZGIyODciLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvcmVhbG1zL21hc3RlciIsImF1ZCI6ImFkbWluLWNsaSIsInN1YiI6IjhiY2FmZDE1LTZlYTktNDA2YS1hYmQzLTFlMjBhMmFlZjAyNCIsInR5cCI6IklEIiwiYXpwIjoiYWRtaW4tY2xpIiwic2Vzc2lvbl9zdGF0ZSI6ImU0ZDAwMGIwLTY4NmItNDg2Ny1iNTk5LWRiYjNiNGJlYzNlMyIsImF0X2hhc2giOiI5Qk5fVmJBVFhhZmNCejRpQjdtdTl3IiwiYWNyIjoiMSIsInNpZCI6ImU0ZDAwMGIwLTY4NmItNDg2Ny1iNTk5LWRiYjNiNGJlYzNlMyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiaG9wLXVzZXIgaG9wLXVzZXIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJob3AtdXNlciIsImdpdmVuX25hbWUiOiJob3AtdXNlciIsImZhbWlseV9uYW1lIjoiaG9wLXVzZXIiLCJlbWFpbCI6ImhvcC11c2VyQGludmFsaWQubWFpbCJ9.V0BrThYtjhvXKm9WlNLuDVSLrucBqRk4QllOC8U8IZj45jDGST7oFkqpnGIP6xSRbebe4Ow--56huDiXdPcymG9_A9Om_EiUvTbHN-Lm9fhx3JHSjt1w7vQ82SJXM2GuaLoF3FNda8MDc23HcFvfUvCPT_k7oIIflLy5udv5SFP7nWCWLFM8pknucHGEpeLLvzAD3mgL0Evdyw6X9DH6goAy0lRW_XtLYoNQj8ArpS4ZOCP8hglp2D66RYgxVl8uf2taps_70LtnL8-IkAUGw_Rc9QDINOHwPK3AnsCPgRp1RuEJPXQLP6-mWfJ-41YaPgB-1V6uvv90pyA8Ef4csQ"}
+
+.. _awscli: https://aws.amazon.com/cli/
+.. _AWS Session Manager plugin: https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html

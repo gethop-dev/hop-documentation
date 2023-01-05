@@ -1,7 +1,7 @@
 AWS infrastructure reference
 ============================
 
-When the AWS cloud provider is selected, the HOP CLI will provision
+When the AWS cloud provider is selected, the HOP Command Line Interface tool (from here on, HOP CLI) will provision
 all the infrastructure needed for deploying the platform.
 
 Cloudformation
@@ -13,8 +13,9 @@ stack definitions can be found in the `HOP CLI's GitHub repository`_:
 .. _`HOP CLI's GitHub repository`: https://github.com/gethop-dev/hop-cli
 
 * `Account stack`_: provisioning of resources that can be shared
-  among different HOP projects.
-* `Project stack`_: provisioning of resources that are project-specific.
+  among different HOP applications.
+* `Project stack`_: provisioning of resources that are project-specific and widely-used
+  in different environments.
 * `Local environment stack`_: provisioning of resources used when developing locally.
 * `Cloud environment stack`_: provisioning of resources used in the
   testing and production environments. The stack is run once for each
@@ -24,7 +25,7 @@ Provisioned architecture
 ------------------------
 
 The following picture shows the general architecture of the
-infrastructure provisioned by the tool.
+infrastructure provisioned by the HOP CLI.
 
 .. image:: img/aws-schema.png
 
@@ -74,7 +75,7 @@ IAM users
 * ``<resource-name-prefix>-ci``: user for running the Continuous
   Integration and Continuous Delivery pipelines. It belongs to the
   ``<resource-name-prefix>-ci`` group.
-* ``<resource-name-prefix>-local-dev``: user for assumming the
+* ``<resource-name-prefix>-local-dev``: user for assuming the
   development IAM role used in the development environment.
 
 IAM roles

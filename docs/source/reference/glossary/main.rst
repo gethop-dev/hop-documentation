@@ -1,4 +1,4 @@
-HOP glossary
+HOP Glossary
 ============
 
 Here we define the glossary for the different terms referenced through
@@ -12,7 +12,7 @@ HOP
 HOP Platform
 ------------
 
-- The code (BE, FE, scripts, etc.) and tooling used to create,
+- The code (backend, frontend, scripts, etc.) and tooling used to create,
   develop, maintain and run web applications (although it can also
   contain non-web sub-systems, like MQTT brokers, ML/AI services,
   etc.)
@@ -27,7 +27,7 @@ HOP Command Line Interface tool
   for the first time. E.g., “You can use the HOP Command Line
   Interface tool (from here on, HOP CLI) to create …”.
 
-HOP application
+HOP Application
 ---------------
 
 - The files in the git repository, plus the CI/CD infrastructure (not
@@ -35,7 +35,7 @@ HOP application
   or Bitbucket infrastructure), plus the cloud/on-premises
   infrastructure used to run the web application.
 
-HOP project
+HOP Project
 -----------
 
 - Just the collection of files in the git repository.
