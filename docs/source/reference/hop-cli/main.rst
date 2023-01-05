@@ -17,19 +17,18 @@ Every command's synopsis will have the following notation:
 bootstrap
 ---------
 
-bootstrap copy-settings
-~~~~~~~~~~~~~~~~~~~~~~~
+bootstrap create-settings-file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Description
 +++++++++++
-Command for getting a copy of the sample settings file used by the
-HOP CLI.
+Creates a file with a copy of the default HOP CLI configuration.
 
 Synopsis
 ++++++++
 .. code-block:: text
 
-   bootstrap copy-settings
+   bootstrap create-settings-file
    --settings-file-path <value>
 
 Options
@@ -41,6 +40,13 @@ Path where the settings file will be copied to.
 Output
 ++++++
 The file will be copied to the specified ``settings-file-path``.
+
+bootstrap copy-settings
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Description
++++++++++++
+This is an alias for the ``bootstrap create-settings-file`` command.
 
 bootstrap new-project
 ~~~~~~~~~~~~~~~~~~~~~
