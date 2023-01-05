@@ -1,6 +1,19 @@
 HOP Command Line Interface tool (HOP CLI) reference
 ===================================================
 
+In this documentation, the commands described in each synopsis sections are not meant
+to be copy-pasted directly into your terminal console. They are just a description of
+their capabilities.
+
+Every command's synopsis will have the following notation:
+
+.. code-block:: text
+
+   <COMMAND>
+   --OPTION <value>
+   [--OPTIONAL-OPTION <value>]
+   ...
+
 bootstrap
 ---------
 
@@ -14,10 +27,10 @@ HOP CLI.
 
 Synopsis
 ++++++++
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar bootstrap copy-settings
-      --settings-file-path <value>
+   bootstrap copy-settings
+   --settings-file-path <value>
 
 Options
 +++++++
@@ -39,11 +52,11 @@ provisioning the infrastructure and generating the project files.
 
 Synopsis
 ++++++++
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar bootstrap new-project
-      --settings-file-path <value>
-      --target-project-dir <value>
+   bootstrap new-project
+   --settings-file-path <value>
+   --target-project-dir <value>
 
 Options
 +++++++
@@ -75,10 +88,10 @@ Command for provisioning the infrastructure for the production environment.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar bootstrap prod-infrastructure
-      --settings-file-path <value>
+   bootstrap prod-infrastructure
+   --settings-file-path <value>
 
 
 Options
@@ -114,14 +127,14 @@ environment variables storage in AWS SSM Parameter Store.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb aws-cli.jar aws env-vars sync
-      --project-name <value>
-      --environment <value>
-      --file <value>
-      --kms-key-alias <value>
-      [--region <value>]
+   aws env-vars sync
+   --project-name <value>
+   --environment <value>
+   --file <value>
+   --kms-key-alias <value>
+   [--region <value>]
 
 Options
 +++++++
@@ -161,14 +174,14 @@ Parameter Store into a file.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb aws-cli.jar aws env-vars download
-      --project-name <value>
-      --environment <value>
-      --file <value>
-      --kms-key-alias <value>
-      [--region <value>]
+   aws env-vars download
+   --project-name <value>
+   --environment <value>
+   --file <value>
+   --kms-key-alias <value>
+   [--region <value>]
 
 Options
 +++++++
@@ -208,12 +221,12 @@ the AWS Console, or by running this command.
 
 Synopsis
 ++++++++
-.. code-block:: console
+.. code-block:: text
 
-   $ bb aws-cli.jar aws env-vars apply-changes
-      --project-name <value>
-      --environment <value>
-      [--region <value>]
+   aws env-vars apply-changes
+   --project-name <value>
+   --environment <value>
+   [--region <value>]
 
 Options
 +++++++
@@ -239,10 +252,10 @@ Certificate Manager.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar aws ssl create-and-upload-self-signed-certificate
-     [--region <value>]
+   aws ssl create-and-upload-self-signed-certificate
+   [--region <value>]
 
 Options
 +++++++
@@ -267,14 +280,14 @@ Create user in the specified AWS Cognito User Pool.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar aws cognito create-user
-      --user-pool-id <value>
-      --username <value>
-      [--attributes <value>]
-      [--temporary-password <value>]
-      [--region <value>]
+   aws cognito create-user
+   --user-pool-id <value>
+   --username <value>
+   [--attributes <value>]
+   [--temporary-password <value>]
+   [--region <value>]
 
 
 Options
@@ -320,14 +333,14 @@ Change the password of the specified user.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar aws cognito set-user-password
-      --user-pool-id <value>
-      --username <value>
-      --password <value>
-      [--temporary? <value>]
-      [--region <value>]
+   aws cognito set-user-password
+   --user-pool-id <value>
+   --username <value>
+   --password <value>
+   [--temporary? <value>]
+   [--region <value>]
 
 Options
 +++++++
@@ -353,13 +366,13 @@ Get OIDC identity token for the specified user.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar aws cognito get-id-token
-      --user-pool-id <value>
-      --username <value>
-      --password <value>
-      [--region <value>]
+   aws cognito get-id-token
+   --user-pool-id <value>
+   --username <value>
+   --password <value>
+   [--region <value>]
 
 
 Options
@@ -401,13 +414,13 @@ Execute command to start a port forwarding session to a RDS instance.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar aws rds start-port-forwarding-session
-      --project-name <value>
-      --environment <value>
-      --local-port <value>
-      [--region <value>]
+   aws rds start-port-forwarding-session
+   --project-name <value>
+   --environment <value>
+   --local-port <value>
+   [--region <value>]
 
 Options
 +++++++
@@ -447,22 +460,22 @@ Create user in the specified Keycloak Realm.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar keycloak create-user
-      --base-url <value>
-      --admin-realm-name <value>
-      --admin-client-id <value>
-      --admin-username <value>
-      --admin-password <value>
-      --realm-name <value>
-      --username <value>
-      [--temporary-password <value>]
-      [--attributes <value>]
-      [--first-name <value>]
-      [--last-name <value>]
-      [--email <value>]
-      [--email-verified <value>]
+   keycloak create-user
+   --base-url <value>
+   --admin-realm-name <value>
+   --admin-client-id <value>
+   --admin-username <value>
+   --admin-password <value>
+   --realm-name <value>
+   --username <value>
+   [--temporary-password <value>]
+   [--attributes <value>]
+   [--first-name <value>]
+   [--last-name <value>]
+   [--email <value>]
+   [--email-verified <value>]
 
 
 Options
@@ -507,18 +520,18 @@ Change the password of the specified user.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar keycloak set-user-password
-      --base-url <value>
-      --admin-realm-name <value>
-      --admin-client-id <value>
-      --admin-username <value>
-      --admin-password <value>
-      --realm-name <value>
-      --user-id <value>
-      --password <value>
-      [--temporary? <value>]
+   keycloak set-user-password
+   --base-url <value>
+   --admin-realm-name <value>
+   --admin-client-id <value>
+   --admin-username <value>
+   --admin-password <value>
+   --realm-name <value>
+   --user-id <value>
+   --password <value>
+   [--temporary? <value>]
 
 Options
 +++++++
@@ -550,16 +563,16 @@ Get the details about the specified Keycloak user.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar keycloak get-user
-      --base-url <value>
-      --admin-realm-name <value>
-      --admin-client-id <value>
-      --admin-username <value>
-      --admin-password <value>
-      --realm-name <value>
-      --username <value>
+   keycloak get-user
+   --base-url <value>
+   --admin-realm-name <value>
+   --admin-client-id <value>
+   --admin-username <value>
+   --admin-password <value>
+   --realm-name <value>
+   --username <value>
 
 Options
 +++++++
@@ -613,14 +626,14 @@ Get OIDC identity token for the specified user.
 Synopsis
 ++++++++
 
-.. code-block:: console
+.. code-block:: text
 
-   $ bb hop-cli.jar keycloak get-id-token
-      --base-url <value>
-      --realm-name <value>
-      --client-id <value>
-      --username <value>
-      --password <value>
+   keycloak get-id-token
+   --base-url <value>
+   --realm-name <value>
+   --client-id <value>
+   --username <value>
+   --password <value>
 
 
 Options
