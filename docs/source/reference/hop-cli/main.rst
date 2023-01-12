@@ -115,6 +115,35 @@ The HOP CLI will also display post-installation messages containing
 actions that have to be performed manually to complete the production
 environment setup.
 
+bootstrap open-settings-editor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Description
++++++++++++
+
+Opens a web-based wizard for creating or editing the settings file.
+
+Synopsis
+++++++++
+.. code-block:: text
+
+   $ bootstrap open-settings-editor
+     [--port <value>]
+
+Options
++++++++
+
+``-p, --port`` (number)
+
+Port on which the web server will be launched.
+
+Output
+++++++
+
+.. code-block:: text
+
+   Settings Editor running at http://localhost:8090
+
 aws env-vars
 ------------
 

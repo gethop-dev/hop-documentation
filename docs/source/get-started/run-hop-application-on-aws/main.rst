@@ -23,14 +23,6 @@ following features:
    provides more bootstrapping features, but this tutorial will focus
    in a bare minimum installation.
 
-The tutorial is also available on video:
-
-.. raw:: html
-
-    <div style="position: relative; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/x1g9Pr6kSJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-
 Prerequisites
 -------------
 
@@ -217,128 +209,49 @@ setup will be done.
    .. _`aws-vault Backends documentation`: https://github.com/99designs/aws-vault/blob/master/USAGE.md#backends
 
 
-Obtain the default settings file
---------------------------------
+Configure the project settings
+------------------------------
 
 The HOP CLI allows the user to configure certain characteristics of
-the project to be generated and provisioned in AWS. At the moment,
-that configuration is specified using a settings file that has
-to be edited manually.
+the project to be generated and provisioned in AWS. That configuration
+is specified using a settings file. This tutorial uses the web-based
+Settings Editor for creating and editing that file. If you would like
+to edit the settings manually please refer to
+:doc:`/get-started/run-hop-application-on-aws/appendix/edit-settings-file-manually`.
 
-The settings file is not intended to be written from scratch, as it is
-quite big and needs to have a certain structure
-[#SettingsFileStructure]_. The HOP CLI can generate a default settings
-file that the user can then edit. To obtain that default settings
-file, you can run the following command.
+First launch the HOP CLI Settings Editor by running the following command:
 
 .. code-block:: console
 
-   $ hop bootstrap create-settings-file --settings-file-path hop-tutorial-settings.edn
-   {:success? true}
+   $ bb bootstrap open-settings-editor
+   Settings Editor running at http://localhost:8090
 
-The command will create a file called ``hop-tutorial-settings.edn`` in
-the current directory.
+Now open the URL in a web browser and you will see the Settings
+Editor's home-page. The first step is to select the HOP profiles. For
+this tutorial we will select the following: Core, Amazon Web Services,
+CI/CD, and Frontend.
 
-.. note::
+.. image:: img/settings-editor-profile-picker.png
 
-   The settings file might look a bit intimidating, but it is due to
-   the fact that it is intended to be consumed by a user interface
-   that will come in a future version of HOP. The file size is an
-   effect of containing lots of pre-configured choices, that might not
-   be needed by the user.
+Now hit next to configure the rest of the project settings.
 
-Edit the settings file
-----------------------
+.. image:: img/settings-editor-editor.png
 
-The settings file allows configuring multiple features and
-characteristics of the project. In this tutorial we will only edit a
-few of them.
+In order to make this tutorial as simple as possible edit the
+following configuration options:
 
-The file has a tree-like structure in which each node has the
-following properties:
-
-* ``name``: The name of the node.
-* ``tag``: Optional string explaining the node's purpose (using
-  `Hiccup`_ syntax).
-* ``type``: The type that the ``value`` field is of. The node can be a
-  leaf (string, number, password, ...) or a branch (plain-group,
-  single-choice-group and multiple-choice-group).
-* ``value``: The configured value for the node.
-* ``choices``: If the node is of type ``single-choice-group`` or
-  ``multiple-choice-group``, this field will contain an array (vector)
-  of branches that the user can select from. The selection is done
-  using the ``value`` field, by specifying the name(s) of the selected
-  branch(es).
-
-.. _Hiccup: https://github.com/weavejester/hiccup
-
-Here is a small `EDN`_ snippet depicting the settings file structure:
-
-.. code-block:: clojure
-
-   [{:name :root-node
-     :tag "Root node"
-     :type :plain-group
-     :value [{:name :node-1
-              :tag "Node 1"
-              :type :single-choice
-              :value :opt-1
-              :choices [{:name :opt-1
-                         :tag "Opt 1"
-                         :type :string
-                         :value "opt 1 value"}
-                         {:name :opt-2
-                         :tag "Opt 2"
-                         :type :string
-                         :value "opt 2 value"}]}
-              {:name :node-2
-               :tag "Node 2"
-               :type :multiple-choice
-               :value [:opt-3 :opt-4]
-               :choices [{:name :opt-3
-                         :tag "Opt 3"
-                         :type :integer
-                         :value 3}
-                         {:name :opt-4
-                         :tag "Opt 4"
-                         :type :integer
-                         :value 4}]}]}]
-
-In order to navigate the data structure above we will use the
-following notation:
-
-* `node-1` → ... → `node-n.property`
-
-For example, if we want to reference the ``:value`` property of the
-``:opt-3`` node, inside the ``:node-2`` node, we would use the
-following notation:
-
-* ``root-node`` → ``node-2`` → ``opt-3.value``
-
-.. note::
-
-   While the settings file uses keywords for the node and property
-   names (e.g., ``:root-node``, or ``:type``), the notation to refer
-   to a particular node or property in this tutorial will use the
-   string representation of those keywords (e.g., ``root-node``, or
-   ``value``). This is just for reading convenience.
-
-Having that structure and notation in mind, open the settings file you
-just created with your favorite text editor, and edit the following
-settings' values:
-
-* ``project`` → ``name.value``: We will set the project name to
+* ``project`` → ``name``: We will set the project name to
   ``"hop-tutorial"``.
-* ``project`` → ``profiles.value``: HOP offers multiple profiles that
-  enhance the bootstrapped project. But for this tutorial we will
-  select some basic ones. We will set the value to ``[:core :frontend
-  :aws :ci]``
-* ``cloud-provider`` → ``aws`` → ``account`` → ``region.value``: The
+* ``cloud-provider`` → ``aws`` → ``account`` → ``region``: The
   AWS region where you want to create the project resources. Change to
   your desired region. So far the HOP CLI has been mainly tested on
   the ``eu-west-1`` region. So we recommend you to use that region in
   order to ensure that all the services required by HOP application
   will be available [#UsingOtherAWSRegion]_.
+
+Once you are done export the settings by clicking the "Export
+settings" button. The browser will download a ``settings.edn`` file
+that you will use in the next steps.
 
 .. note::
 
@@ -373,6 +286,7 @@ settings' values:
    yourself. Refer to :doc:`/how-to/delete-aws-resources/main` for
    additional details.
 
+.. _run-hop-application-on-aws_run-bootstrap-command:
 
 Run the bootstrap command
 -------------------------
