@@ -231,15 +231,9 @@ quite big and needs to have a certain structure
 file that the user can then edit. To obtain that default settings
 file, you can run the following command.
 
-.. note::
-
-   The command assumes that the ``hop-cli.jar`` file is in the current
-   directory. If it is not, then you need to specify the path to that
-   file:
-
 .. code-block:: console
 
-   $ bb hop-cli.jar bootstrap create-settings-file --settings-file-path hop-tutorial-settings.edn
+   $ hop bootstrap create-settings-file --settings-file-path hop-tutorial-settings.edn
    {:success? true}
 
 The command will create a file called ``hop-tutorial-settings.edn`` in
@@ -399,9 +393,9 @@ the previous step.
 
 .. code-block:: console
 
-   $ aws-vault exec --no-session --region your-aws-region hop/hop-tutorial-admin -- bb hop-cli.jar bootstrap new-project --settings-file-path hop-tutorial-settings.edn --target-project-dir hop-tutorial-project
+   $ aws-vault exec --no-session --region your-aws-region hop/hop-tutorial-admin -- hop bootstrap new-project --settings-file-path hop-tutorial-settings.edn --target-project-dir hop-tutorial-project
 
-You are telling ``aws-vault`` to run the ``bb hop-cli.jar bootstrap``
+You are telling ``aws-vault`` to run the ``hop bootstrap``
 command, with the ``hop/hop-tutorial-admin`` credentials that you
 stored in the vault in a previous step.
 

@@ -101,7 +101,7 @@ Parameter Store:
 
 .. code-block:: console
 
-   $ aws-vault exec --region <aws-region> --no-session hop/hop-tutorial-admin -- bb hop-cli.jar aws env-vars sync --project-name <hop-project-name> --environment <hop-project-eb-environment> --file empty-variables.env --kms-key-alias <hop-project-kms-alias>
+   $ aws-vault exec --region <aws-region> --no-session hop/hop-tutorial-admin -- hop aws env-vars sync --project-name <hop-project-name> --environment <hop-project-eb-environment> --file empty-variables.env --kms-key-alias <hop-project-kms-alias>
 
 where:
 
@@ -126,7 +126,7 @@ deleted:
 
 .. code-block:: console
 
-   $ aws-vault exec --region <aws-region> --no-session hop/hop-tutorial-admin -- bb hop-cli.jar aws env-vars sync --project-name <hop-project-name> --environment <hop-project-eb-environment> --file empty-variables.env --kms-key-alias <hop-project-kms-alias>
+   $ aws-vault exec --region <aws-region> --no-session hop/hop-tutorial-admin -- hop aws env-vars sync --project-name <hop-project-name> --environment <hop-project-eb-environment> --file empty-variables.env --kms-key-alias <hop-project-kms-alias>
    {:success? true,
     :sync-details
     {:to-update [],

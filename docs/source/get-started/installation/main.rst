@@ -12,11 +12,13 @@ HOP application.
 Prerequisites
 -------------
 
-Two third-party programs are required to run the HOP CLI:
+Three third-party programs are required to run the HOP CLI:
 
 * `Babashka <https://github.com/babashka/babashka>`_, that provides a
   fast-starting, native Clojure interpreter. It is used to interpret
   (run) the HOP CLI itself, as it is written in Clojure.
+* `bbin <https://github.com/babashka/bbin>`_, that provides utility
+  commands for installing Babashka based tools.
 * `OpenSSL <https://www.openssl.org/>`_, that provides cryptographic
   capabilities to the HOP CLI. The HOP CLI uses it to store
   credentials securely, and to run other cryptographic operations like
@@ -40,6 +42,27 @@ terminal:
    Babashka v1.0.168
 
 As of this writing, the HOP CLI requires Babashka v1.0.168 or
+later. Using the latest available version is generally recommended.
+
+Install bbin
+++++++++++++
+
+There are multiple installation options available depending on your
+operation system. You can find them described in the `bbin
+Installation page`_.
+
+.. _bbin Installation page: https://github.com/babashka/bbin/blob/main/docs/installation.md
+
+Once you are done with the installation, you can check that the
+installation was successful by running the following command from a
+terminal:
+
+.. code-block:: console
+
+   $ bbin version
+   bbin 0.1.3
+
+As of this writing, the HOP CLI requires bbin 0.1.3 or
 later. Using the latest available version is generally recommended.
 
 Install OpenSSL
@@ -85,41 +108,33 @@ the version command again:
    $ openssl version
    OpenSSL 1.1.1n  15 Mar 2022
 
-Download the HOP CLI
---------------------
+Install the HOP CLI
+-------------------
 
 The HOP CLI is distributed as a Babashka Uberjar. All the required
 Clojure dependencies and resources are packed in a single JAR file
-that can be run from the command line using Babashka.
+that can be installed using bbin running the following command in a
+terminal.
 
-The mentioned file can be downloaded from the `GitHub Releases
-section`_. Download the ``hop-cli.jar`` file for the latest available
-release.
+.. code-block:: console
 
-.. _GitHub Releases section: https://github.com/gethop-dev/hop-cli/releases
+   $ bbin install --as hop https://github.com/gethop-dev/hop-cli/releases/latest/download/hop-cli.jar
 
 Run the HOP CLI
 ---------------
 
-Open a terminal in the folder where you downloaded the ``hop-cli.jar``
-file and run it using Babashka. All the available sub-commands provided
-by the tool will be printed:
+You can now run the HOP CLI by typing ``hop`` in a terminal. All the
+available sub-commands provided by the tool will be printed:
 
 .. code-block:: console
 
-   $ bb hop-cli.jar
+   $ hop
    Usage:  <subcommand> <options>
 
    Subcommands
      bootstrap  HOP bootstrap commands
      aws        AWS utility commands
      keycloak   Keycloak utility commands
-
-.. note::
-
-   You can save the ``hop-cli.jar`` in any directory of your
-   choice. You just need to specify the path to the ``hop-cli.jar``
-   file whenever you want to execute it with ``bb``.
 
 You are now ready to bootstrap your first HOP application. You can
 follow the :doc:`/get-started/run-hop-application-on-aws/main`
