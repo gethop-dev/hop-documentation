@@ -14,6 +14,36 @@ Every command's synopsis will have the following notation:
    [--OPTIONAL-OPTION <value>]
    ...
 
+version
+-------
+
+version
+~~~~~~~
+
+Description
++++++++++++
+
+Get HOP CLI version.
+
+Synopsis
+++++++++
+
+.. code-block:: text
+
+   version
+
+Options
++++++++
+
+None
+
+Output
+++++++
+
+.. code-block:: text
+
+   0.1.0-SNAPSHOT
+
 bootstrap
 ---------
 

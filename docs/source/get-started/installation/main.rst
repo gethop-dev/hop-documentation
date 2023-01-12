@@ -132,6 +132,7 @@ available sub-commands provided by the tool will be printed:
    Usage:  <subcommand> <options>
 
    Subcommands
+     version    Get HOP CLI version
      bootstrap  HOP bootstrap commands
      aws        AWS utility commands
      keycloak   Keycloak utility commands
