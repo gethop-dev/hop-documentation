@@ -223,7 +223,7 @@ First launch the HOP CLI Settings Editor by running the following command:
 
 .. code-block:: console
 
-   $ bb bootstrap open-settings-editor
+   $ hop bootstrap open-settings-editor
    Settings Editor running at http://localhost:8090
 
 Now open the URL in a web browser and you will see the Settings
