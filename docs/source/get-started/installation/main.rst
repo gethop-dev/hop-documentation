@@ -48,7 +48,7 @@ Install bbin
 ++++++++++++
 
 There are multiple installation options available depending on your
-operation system. You can find them described in the `bbin
+operating system. You can find them described in the `bbin
 Installation page`_.
 
 .. _bbin Installation page: https://github.com/babashka/bbin/blob/main/docs/installation.md
