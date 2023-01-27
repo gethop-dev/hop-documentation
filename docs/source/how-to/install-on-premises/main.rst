@@ -514,9 +514,9 @@ and with no SSL termination. HOP offers two ways of achieving this:
 NGINX
 +++++
 
-This guide is using NGINX reverse proxy configuration option which
-only provides a ``.conf`` file with the necessary configuration to do
-SSL termination using NGINX. The file can be found in
+The NGINX reverse proxy configuration option which only provides a
+``.conf`` file with the necessary configuration to do SSL termination
+using NGINX. The file can be found in
 ``/usr/local/hop/<your-project-name>/app-files/on-premises-files/etc/nginx/nginx.conf``. However
 how you install NGINX and generate the certificates is up to you.
 
