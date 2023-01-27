@@ -51,8 +51,16 @@ After running the command, it will output the URL to access the Settings Editor.
 
    Settings Editor running at http://localhost:8090
 
-As a reference, this guide assumes the following profile selections
-and configuration:
+This guide assumes the following profiles selection:
+
+- Core.
+- Frontend.
+- CI/CD.
+- On-premises.
+- Persistence - SQL.
+
+As a reference, this guide assumes the following configuration in each
+profile:
 
 - Core.
 
@@ -72,6 +80,8 @@ and configuration:
       ``project -> name``) after ``/usr/local/hop/``.
   - With the settings ``project -> profiles -> on-premises -> ssl-termination`` set to ``NGINX configuration file``
 - Persistence - SQL.
+
+Also do not forget to select ``On-premises`` as the deployment target.
 
 .. note::
 
