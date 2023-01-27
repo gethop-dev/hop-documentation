@@ -231,7 +231,15 @@ Setting up tools, users and groups
    machine.
 
 First you have to install the necessary tools for this part of the
-guide. If you are going to do the installation on a Debian 11 machine, as
+guide. All the following commands should be executed as the ``root``
+user of your system and you should only change users when requested by
+the guide. So make sure you are logged in as ``root`` before starting:
+
+.. code-block:: console
+
+   $ su -
+
+If you are going to do the installation on a Debian 11 machine, as
 in this guide, you can run the following commands to install the
 packages:
 
@@ -295,14 +303,6 @@ Installing application
 Now that you have installed the required packages and set up the user
 and group, the next step is to prepare the application files
 directories for installation.
-
-All the following commands should be executed as the ``root`` user of
-your system and you should only change users when requested by the
-guide. So make sure you are logged in as ``root`` before starting:
-
-.. code-block:: console
-
-   $ su -
 
 First you have to create the application files folder where all the
 files to run the system will reside:
