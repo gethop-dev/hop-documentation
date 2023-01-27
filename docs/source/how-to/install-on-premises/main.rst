@@ -458,7 +458,7 @@ use ``docker-compose`` to access the ``psql`` shell:
 .. code-block:: console
 
    $ cd ~/app-files
-   $ docker-compose exec psql --user postgres <the-database-name-you-chose>
+   $ docker-compose exec psql --user <admin-user> <the-database-name-you-chose>
 
 This will open the ``psql`` shell. Now execute the SQL statements that
 appear in the HOP CLI post-installation steps and then exit.
