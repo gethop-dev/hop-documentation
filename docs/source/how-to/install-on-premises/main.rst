@@ -1,4 +1,4 @@
-How to do create and install an on-premises HOP Application
+How to create and install an on-premises HOP Application
 ===========================================================
 
 This guide describes how to carry on the creation and first
@@ -51,11 +51,12 @@ After running the command, it will output the URL to access the Settings Editor.
 
    Settings Editor running at http://localhost:8090
 
-This guide assumes the following profile selections and configuration:
+As a reference, this guide assumes the following profile selections
+and configuration:
 
 - Core.
 
-  - With the setting ``project -> docker -> registry`` set to ``Custom``
+  - With the setting ``project -> docker -> registry`` set to ``Custom Registry Provider``
 - Frontend.
 - CI/CD.
 
@@ -167,6 +168,20 @@ your own deployment strategy.
 The ``create-app-bundle.sh`` script bundles all the necessary
 files for deployment and installation into a ``TAR`` file. It also
 provides you the ``sha256sum`` of the ``TAR`` file in case you need it.
+
+The bundle is not the only thing you have to care of. You will also
+have to make sure to build and store your application on a Docker
+Registry that is accesible later on when deploying the final
+artifact. HOP assumes the deployment machine will have internet
+connectivity which is required to download the required Docker images.
+
+The scripts ``ci/build-app-prod-docker-image.sh`` and
+``ci/publish-app-prod-docker-image.sh`` is what you need to build and
+publish the application's Docker image. Those scripts use
+configuration variables from ``ci/common-vars.sh`` where you can find
+``DOCKER_IMAGE_REPOSITORY`` value. The value of this variable is what
+you configured on the Settings Editor ``project -> docker -> registry
+-> custom -> app-repository-url``.
 
 So in order to proceed to the next step which is doing the
 installation and first deployment you will need to bundle the
