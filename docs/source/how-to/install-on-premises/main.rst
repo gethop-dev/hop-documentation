@@ -277,16 +277,12 @@ use the following commands:
 That should install a newer ``docker-compose`` version, higher than or
 equal to ``1.27.4``.
 
-The next step is configure the docker group in
-``/etc/docker/daemon.json``
+The next step to create the docker group. Use the following command to
+do so:
 
 .. code-block:: console
 
-   # cat > /etc/docker/daemon.json <<EOF
-     {
-         "group": "docker"
-     }
-     EOF
+   # sudo groupadd docker
 
 After that, enable the ``docker`` service so it starts automatically
 if the machine restarts. Then restart the service.
