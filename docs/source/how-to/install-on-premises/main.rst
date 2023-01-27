@@ -31,8 +31,8 @@ machine.
 .. _Docker Compose: https://docs.docker.com/compose/
 .. _yq: https://github.com/mikefarah/yq
 
-Generate a new project using On-premises profile
-------------------------------------------------
+Generate a new project using On-premises deployment target
+----------------------------------------------------------
 
 First, you need to create a new project using the On-premises as
 profile and deployment target. To do that, you need to create a
