@@ -140,7 +140,7 @@ available sub-commands provided by the tool will be printed:
 You are now ready to bootstrap your first HOP application. You can
 follow the :doc:`/get-started/run-hop-application-on-aws/main`
 tutorial to create and deploy a HOP application on Amazon Web Services
-cloud provider.
+or On-premises deployment targets.
 
 .. rubric:: Footnotes
 

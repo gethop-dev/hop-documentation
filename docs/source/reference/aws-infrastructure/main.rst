@@ -1,8 +1,9 @@
 AWS infrastructure reference
 ============================
 
-When the AWS cloud provider is selected, the HOP Command Line Interface tool (from here on, HOP CLI) will provision
-all the infrastructure needed for deploying the platform.
+When the AWS deployment target is selected, the HOP Command Line
+Interface tool (from here on, HOP CLI) will provision all the
+infrastructure needed for deploying the platform.
 
 Cloudformation
 --------------

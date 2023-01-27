@@ -9,7 +9,7 @@ following features:
 
 * `Duct Framework`_ based backend.
 * `Reactive`_ ClojureScript front-end.
-* Infrastructure provisioning in the Amazon Web Services cloud provider.
+* Infrastructure provisioning in the Amazon Web Services deployment target.
 * CI/CD integration with `GitHub Actions`_.
 
 .. _Reactive: https://github.com/reagent-project/reagent
@@ -242,7 +242,7 @@ following configuration options:
 
 * ``project`` → ``name``: We will set the project name to
   ``"hop-tutorial"``.
-* ``cloud-provider`` → ``aws`` → ``account`` → ``region``: The
+* ``deployment-target`` → ``aws`` → ``account`` → ``region``: The
   AWS region where you want to create the project resources. Change to
   your desired region. So far the HOP CLI has been mainly tested on
   the ``eu-west-1`` region. So we recommend you to use that region in

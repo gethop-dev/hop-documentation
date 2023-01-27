@@ -105,7 +105,7 @@ Parameter Store:
 
 where:
 
-* ``<aws-region>`` is value of ``cloud-provider`` → ``aws`` →
+* ``<aws-region>`` is value of ``deployment-target`` → ``aws`` →
   ``account`` → ``region.value`` in the settings file for the HOP
   project.
 * ``<hop-project-name>`` is the value of ``project`` →
@@ -113,9 +113,9 @@ where:
 * ``<hop-project-eb-environment>`` is either ``test`` or ``prod``
 * ``<hop-project-kms-alias>`` is one of the two following values:
 
-  * ``cloud-provider`` → ``aws`` → ``environment`` → ``test`` →
+  * ``deployment-target`` → ``aws`` → ``environment`` → ``test`` →
     ``kms`` → ``key-alias.value``.
-  * ``cloud-provider`` → ``aws`` → ``environment`` → ``prod`` →
+  * ``deployment-target`` → ``aws`` → ``environment`` → ``prod`` →
     ``kms`` → ``key-alias.value``.
 
   depending on the value of ``<hop-project-eb-environment>``.

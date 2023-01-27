@@ -103,7 +103,7 @@ settings' values:
   enhance the bootstrapped project. But for this tutorial we will
   select some basic ones. We will set the value to ``[:core :frontend
   :aws :ci]``
-* ``cloud-provider`` → ``aws`` → ``account`` → ``region.value``: The
+* ``deployment-target`` → ``aws`` → ``account`` → ``region.value``: The
   AWS region where you want to create the project resources. Change to
   your desired region. So far the HOP CLI has been mainly tested on
   the ``eu-west-1`` region. So we recommend you to use that region in

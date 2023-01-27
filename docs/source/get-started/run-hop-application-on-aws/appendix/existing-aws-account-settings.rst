@@ -7,7 +7,7 @@ conflicts or misbehavior when generating a new project using the HOP
 CLI. When configuring the settings file, double-check the following
 configuration options:
 
-* ``cloud-provider`` → ``aws`` → ``account``
+* ``deployment-target`` → ``aws`` → ``account``
 
   * ``stack-name.value``: Name for the Cloudformation stack
     that will prepare your AWS account for running HOP Applications. The
@@ -19,7 +19,7 @@ configuration options:
     your AWS VPC. Make sure to use a AWS VPC CIDR that does not conflict with an
     existing one in your account.
 
-* ``cloud-provider`` → ``aws`` → ``project``
+* ``deployment-target`` → ``aws`` → ``project``
 
   * ``stack-name.value``: Name for the AWS Cloudformation stack
     that will be used to generate application-wide resources. The project
@@ -35,7 +35,7 @@ configuration options:
       the AWS VPC CIDR block and that it does not conflict with other
       AWS subnets CIDRs.
 
-* ``cloud-provider`` → ``aws`` → ``environment``
+* ``deployment-target`` → ``aws`` → ``environment``
 
   * ``dev``
 
