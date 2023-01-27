@@ -20,6 +20,7 @@ Contents
    :caption: How-To Guides
 
    /how-to/delete-aws-resources/main
+   /how-to/install-on-premises/main
 
 .. toctree::
    :maxdepth: 2
