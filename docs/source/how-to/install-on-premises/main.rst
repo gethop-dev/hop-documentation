@@ -231,7 +231,7 @@ Setting up tools, users and groups
    machine.
 
 First you have to install the necessary tools for this part of the
-guide. If are going to do the installation on a Debian 11 machine, as
+guide. If you are going to do the installation on a Debian 11 machine, as
 in this guide, you can run the following commands to install the
 packages:
 
