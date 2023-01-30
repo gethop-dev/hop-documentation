@@ -6,8 +6,8 @@ Welcome to HOP documentation!
    This project is under active development.
 
 Welcome to HOP documentation. If you are a new comer we recommend you
-to start reading the Get started section. It will show you how to
-install HOP Command Line Interface tool and the fundamentals of tool.
+to start reading the Get Started section. It will show you how to
+install HOP Command Line Interface tool and the fundamentals of the tool.
 
 Once you are familiar with the tooling and have completed (or read)
 the :doc:`/get-started/run-hop-application-on-aws/main` tutorial, you can
