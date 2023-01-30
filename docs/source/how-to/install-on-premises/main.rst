@@ -499,15 +499,19 @@ service is up and running using the following command:
 
    # systemctl status <your-project-name>-app.service
 
+If it says the service is active and running, you have installed the
+application successfully!
+
 SSL Termination
 ~~~~~~~~~~~~~~~
 
 Now, the system is running but it is still available only on localhost
 and with no SSL termination. HOP offers two ways of achieving this:
 
-- Configuration for NGINX reverse proxy (the option selected by this guide).
+- Configuration for `NGINX`_ reverse proxy.
 - `HTTPS Portal`_ which automatically issues certificates with `Let's Encrypt`_.
 
+.. _NGINX: https://nginx.org/en/
 .. _HTTPS Portal: https://github.com/SteveLTN/https-portal
 .. _Let's Encrypt: https://letsencrypt.org/
 
