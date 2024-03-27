@@ -435,6 +435,7 @@ Synopsis
 
    aws cognito get-id-token
    --user-pool-id <value>
+   --client-id <value>
    --username <value>
    --password <value>
    [--region <value>]
@@ -445,9 +446,11 @@ Options
 
 ``-up, --user-pool-id`` (string)
 
+``-c, --client-id`` (string)
+
 ``-u, --username`` (string)
 
-``-u, --password`` (string)
+``-p, --password`` (string)
 
 ``-r, --region`` (string)
 
