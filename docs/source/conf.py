@@ -3,8 +3,8 @@
 # -- Project information
 
 project = 'HOP'
-copyright = '2022 Magnet, S. Coop. This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/'
-author = 'Magnet S. Coop'
+copyright = '2024 Biotz, SL. This website is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0/'
+author = 'Biotz, SL'
 
 release = '0.1'
 version = '0.1.0'
