@@ -44,6 +44,8 @@ following properties:
 
 Here is a small `EDN`_ snippet depicting the settings file structure:
 
+.. _EDN: https://github.com/edn-format/edn
+
 .. code-block:: clojure
 
    [{:name :root-node
@@ -159,5 +161,10 @@ Settings Editor or you edited the file manually.
    needs to conform to a HOP-specific `Malli Schema`_. Its structure
    is loosely based on GNU Emacs customization settings.
 
+.. _Malli Schema: https://github.com/metosin/malli
+
 .. [#UsingOtherAWSRegion] If you use any other AWS region and find any
    problem, please open an issue in the `HOP CLI issue tracker`_
+
+.. _HOP CLI issue tracker: https://github.com/gethop-dev/hop-cli/issues
+
