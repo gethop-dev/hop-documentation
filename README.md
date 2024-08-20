@@ -4,7 +4,7 @@ https://docs.gethop.dev
 
 ## License
 
-Copyright (c) 2022 Magnet S. Coop.
+Copyright (c) 2024 Biotz, SL.
 
 This work is licensed under a [Creative Commons Attribution-ShareAlike
 4.0 International License][cc-by-sa].
