@@ -576,7 +576,7 @@ Now commit and push the change to GitHub:
    $ git commit -m "Change landing message"
    $ git push
 
-This second commit will start the CI/CE pipeline, which will perform
+This second commit will start the CI/CD pipeline, which will perform
 the following steps:
 
 1. Run linting and formatting checks against the ``sh``, ``yaml``, ``json``
