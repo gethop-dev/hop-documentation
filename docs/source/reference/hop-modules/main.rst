@@ -10,7 +10,7 @@ Authentication and authorization
 * `buddy-auth.jwt-oidc`_ - Library implementing a
   ``:duct.middleware.buddy/authentication`` compatible JWT token
   validation function for OpenID Connect ID Tokens.
-* `rbac`_ - Library that provides role-based access control.
+* `rbac.next`_ - Library that provides role-based access control.
 * `session.re-frame.cognito`_ - A library that provides re-frame
   events for managing AWS Cognito user sessions.
 * `user-manager.cognito`_ - A Library for interacting with the AWS
@@ -22,6 +22,7 @@ Object storage
 * `object-storage.core`_ - Library that provides an object-storage
   protocol that can be implemented by other libraries.
 * `object-storage.s3`_ - Object storage implementation for Amazon S3.
+* `object-storage.azure-blob-storage`_ - Object storage implementation for Amazon S3.
 * `object-storage.ftp`_ - Object storage implementation for FTP.
 
 Business Intelligence
@@ -87,7 +88,7 @@ Electronic signatures
 .. _user-manager.cognito: https://github.com/gethop-dev/user-manager.cognito
 .. _duct.module.cljs-compiler: https://github.com/gethop-dev/duct.module.cljs-compiler
 .. _duct.server.figwheel-main: https://github.com/gethop-dev/duct.server.figwheel-main
-.. _rbac: https://github.com/gethop-dev/rbac
+.. _rbac.next: https://github.com/gethop-dev/rbac.next
 .. _notifications.firebase: https://github.com/gethop-dev/notifications.firebase
 .. _session.re-frame.cognito: https://github.com/gethop-dev/session.re-frame.cognito
 .. _dashboard-manager.grafana: https://github.com/gethop-dev/dashboard-manager.grafana
@@ -98,6 +99,7 @@ Electronic signatures
 .. _esignatures.docusign: https://github.com/gethop-dev/esignatures.docusign
 .. _object-storage.core: https://github.com/gethop-dev/object-storage.core
 .. _object-storage.s3: https://github.com/gethop-dev/object-storage.s3
+.. _object-storage.azure-blob-storage: https://github.com/gethop-dev/object-storage.azure-blob-storage
 .. _object-storage.ftp: https://github.com/gethop-dev/object-storage.ftp
 .. _encryption: https://github.com/gethop-dev/encryption
 .. _secret-storage.aws-ssm-ps: https://github.com/gethop-dev/secret-storage.aws-ssm-ps
