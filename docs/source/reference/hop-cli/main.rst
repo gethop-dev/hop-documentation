@@ -189,6 +189,13 @@ Description
 Command for synchronizing local environment variables with the remote
 environment variables storage in AWS SSM Parameter Store.
 
+.. warning::
+
+   In order to use this command you need run it with some AWS
+   credentials that have the permissions to list, read and write
+   parameters in the SSM Parameter Store. Probably the easiest way to
+   do it is by using `awsvault` tool to run HOP CLI.
+
 Synopsis
 ++++++++
 
@@ -235,6 +242,13 @@ Description
 
 Command for downloading the environment variables from AWS SSM
 Parameter Store into a file.
+
+.. warning::
+
+   In order to use this command you need run it with some AWS
+   credentials that have the permissions to list, read and write
+   parameters in the SSM Parameter Store. Probably the easiest way to
+   do it is by using `awsvault` tool to run HOP CLI.
 
 Synopsis
 ++++++++
@@ -284,6 +298,13 @@ Beanstalk, the environment has to be restarted. This can be done
 automatically by AWS (deploying a new application version...), using
 the AWS Console, or by running this command.
 
+.. warning::
+
+   In order to use this command you need run it with some AWS
+   credentials that have the permissions to update an environment in
+   ElasticBeanstalk. Probably the easiest way to do it is by using
+   `awsvault` tool to run HOP CLI.
+
 Synopsis
 ++++++++
 .. code-block:: text
@@ -314,6 +335,13 @@ Description
 Command for creating and uploading a self-signed certificate to AWS
 Certificate Manager.
 
+.. warning::
+
+   In order to use this command you need run it with some AWS
+   credentials that have the permissions to import certificates in the
+   Certificate Manager. Probably the easiest way to do it is by using
+   `awsvault` tool to run HOP CLI.
+
 Synopsis
 ++++++++
 
@@ -341,6 +369,13 @@ Description
 +++++++++++
 
 Create user in the specified AWS Cognito User Pool.
+
+.. warning::
+
+   In order to use this command you need run it with some AWS
+   credentials that have the permissions to create new users in
+   Cognito User Pools. Probably the easiest way to do it is by using
+   `awsvault` tool to run HOP CLI.
 
 Synopsis
 ++++++++
@@ -395,6 +430,13 @@ Description
 
 Change the password of the specified user.
 
+.. warning::
+
+   In order to use this command you need run it with some AWS
+   credentials that have the permissions to administratively reset the
+   password of a Cognito User Pool user. Probably the easiest way to
+   do it is by using `awsvault` tool to run HOP CLI.
+
 Synopsis
 ++++++++
 
@@ -427,6 +469,13 @@ Description
 +++++++++++
 
 Get OIDC identity token for the specified user.
+
+.. warning::
+
+   In order to use this command you need run it with some AWS
+   credentials that have the permissions to authenticate any
+   user. Probably the easiest way to do it is by using `awsvault` tool
+   to run HOP CLI.
 
 Synopsis
 ++++++++
