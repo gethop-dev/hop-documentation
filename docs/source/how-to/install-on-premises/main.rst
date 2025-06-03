@@ -81,7 +81,7 @@ profile:
   - With the settings ``project -> profiles -> on-premises -> ssl-termination`` set to ``NGINX configuration file``
 - Persistence - SQL.
 
-Also do not forget to select ``On-premises`` as the deployment target.
+Also do not forget to select ``On-premises infrastructure`` as the deployment target.
 
 .. note::
 
