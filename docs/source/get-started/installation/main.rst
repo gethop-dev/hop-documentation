@@ -39,9 +39,9 @@ terminal:
 .. code-block:: console
 
    $ bb version
-   Babashka v1.0.168
+   Babashka v1.3.189
 
-As of this writing, the HOP CLI requires Babashka v1.0.168 or
+As of this writing, the HOP CLI requires Babashka v1.3.189 or
 later. Using the latest available version is generally recommended.
 
 Install bbin
