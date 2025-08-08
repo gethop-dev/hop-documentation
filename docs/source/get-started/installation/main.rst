@@ -114,7 +114,9 @@ Install the HOP CLI
 The HOP CLI is distributed as a Babashka Uberjar. All the required
 Clojure dependencies and resources are packed in a single JAR file
 that can be installed using bbin running the following command in a
-terminal.
+terminal. Use the following command to install the latest available
+version, or to update to the latest available version if you already
+have an older one:
 
 .. code-block:: console
 
