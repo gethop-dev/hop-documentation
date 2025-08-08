@@ -175,7 +175,10 @@ Access Key`_ from the AWS Console.
 Although it is not mandatory, we strongly recommend storing the
 administrator user credentials using AWS Vault
 [#AdminAwsVaultCreds]_. Once you have the credentials, you can store
-them in AWS Vault using the following command:
+them in AWS Vault using the following command. The command assumes
+that you will configure the "aws-vault prefix" configuration setting
+as indicated below. If you configure a different prefix, make sure to
+adjust this command to use the right one:
 
 .. code-block:: console
 
@@ -228,8 +231,8 @@ First launch the HOP CLI Settings Editor by running the following command:
 
 Now open the URL in a web browser and you will see the Settings
 Editor's home-page. The first step is to select the HOP profiles. For
-this tutorial we will select the following: Core, Amazon Web Services,
-CI/CD, and Frontend.
+this tutorial we will select the following: Core, Frontend, Deploy to
+Amazon Web Services and CI/CD.
 
 .. image:: img/settings-editor-profile-picker.png
 
@@ -241,7 +244,12 @@ In order to make this tutorial as simple as possible edit the
 following configuration options:
 
 * ``project`` → ``name``: We will set the project name to
-  ``"hop-tutorial"``.
+  ``hop-tutorial``.
+* ``project`` → ``profiles`` → ``aws`` → ``aws-vault`` →
+  ``profile-prefix``: We will set the aws-vault profile to ``hop``. In
+  the general case, you may want to use a prefix that identifies the
+  project customer, or the AWS account where you will deploy the
+  project, etc.
 * ``deployment-target`` → ``aws`` → ``account`` → ``region``: The
   AWS region where you want to create the project resources. Change to
   your desired region. So far the HOP CLI has been mainly tested on
