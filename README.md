@@ -2,6 +2,10 @@
 
 https://docs.gethop.dev
 
+## Local Development
+
+The local development is explained step by step in the <a href="/SETUP.md" target="_self">SETUP.md</a> file.
+
 ## License
 
 Copyright (c) 2024 onwards Biotz, SL.
