@@ -1,13 +1,13 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 WORKDIR /hop-docs
 
 COPY docs/requirements.txt docs/requirements.txt
 
 RUN apt-get update && \
-    apt-get install -y runit python3 python3-virtualenv && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -y runit python3 python3-virtualenv && \
     apt-get clean && \
-    mkdir -p /venv && python3.10 -mvirtualenv /venv && \
+    mkdir -p /venv && python3.12 -mvirtualenv /venv && \
     /venv/bin/python -m pip install --upgrade --no-cache-dir 'pip' 'setuptools < 58.3.0' && \
     /venv/bin/python -m pip install --upgrade --no-cache-dir -r docs/requirements.txt
 
