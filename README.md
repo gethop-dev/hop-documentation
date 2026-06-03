@@ -1,6 +1,6 @@
 # HOP documentation
 
-https://docs.gethop.dev
+https://hop-documentation.readthedocs.io/
 
 ## Local Development
 
